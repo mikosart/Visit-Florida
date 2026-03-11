@@ -117,6 +117,46 @@ var translations = {
     es: 'RECURSOS<br/>GRÁFICOS',
     pt: 'RECURSOS<br/>GRÁFICOS'
   },
+  'consolidated.title': {
+    en: 'BRAND<br/>GUIDELINES<br/>&amp; LOGOS',
+    es: 'LINEAMIENTOS<br/>DE MARCA<br/>Y LOGOTIPOS',
+    pt: 'DIRETRIZES<br/>DE MARCA<br/>E LOGOTIPOS'
+  },
+  'con.qn.label': {
+    en: 'QUICK NAVIGATION',
+    es: 'NAVEGACIÓN RÁPIDA',
+    pt: 'NAVEGAÇÃO RÁPIDA'
+  },
+  'con.pill.brand': {
+    en: 'BRAND GUIDELINES',
+    es: 'LINEAMIENTOS DE MARCA',
+    pt: 'DIRETRIZES DE MARCA'
+  },
+  'con.pill.vflogo': {
+    en: 'VF LOGO',
+    es: 'LOGOTIPO VF',
+    pt: 'LOGOTIPO VF'
+  },
+  'con.pill.partner': {
+    en: 'PARTNER LOCKUP',
+    es: 'LOGOTIPO COMBINADO',
+    pt: 'LOCKUP DO LOGOTIPO'
+  },
+  'con.pill.campaign': {
+    en: 'CAMPAIGN MARK',
+    es: 'MARCA DE CAMPAÑA',
+    pt: 'CAMPANHA DE MARKETING'
+  },
+  'con.pill.assets': {
+    en: 'GRAPHIC ASSETS',
+    es: 'RECURSOS GRÁFICOS',
+    pt: 'RECURSOS GRÁFICOS'
+  },
+  'con.toggle.label': {
+    en: 'SECTIONS',
+    es: 'SECCIONES',
+    pt: 'SEÇÕES'
+  },
   'index.image.title': {
     en: 'IMAGE ASSETS',
     es: 'RECURSOS VISUALES',

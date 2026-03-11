@@ -65,14 +65,8 @@
       follow VISIT FLORIDA's brand guidelines for proper usage and application of all assets.
     </p>
 <nav aria-label="Brand guidelines pages" class="brand-hub">
-<div class="brand-hub__row">
-<a class="hub-btn" href="pages/brand-guidelines.html" data-i18n="index.brand.btn1">BRAND<br/>GUIDELINES</a>
-<a class="hub-btn" href="pages/vf-logo-guidelines.html" data-i18n="index.brand.btn2">VISIT FLORIDA<br/>LOGO GUIDELINES</a>
-<a class="hub-btn" href="pages/vf-logo-lockup-guidelines.html" data-i18n="index.brand.btn3">PARTNER LOGO<br/>LOCKUP GUIDELINES</a>
-</div>
-<div class="brand-hub__row">
-<a class="hub-btn" href="pages/campaign-mark-guidelines.html" data-i18n="index.brand.btn4">CAMPAIGN MARK<br/>GUIDELINES</a>
-<a class="hub-btn" href="pages/graphic-assets.html" data-i18n="index.brand.btn5">GRAPHIC<br/>ASSETS</a>
+<div class="brand-hub__row brand-hub__row--single">
+<a class="hub-btn" href="pages/brand-guidelines-consolidated.html" data-i18n="index.brand.btn1">BRAND<br/>GUIDELINES</a>
 </div>
 </nav>
 </div>
@@ -201,7 +195,7 @@
       <img alt="Digital banner example 1" decoding="async" loading="lazy" src="img/section7/main-digital-assets-01.png"/>
     </figure>
     <figure class="digital-item di-2">
-      <img alt="Digital banner example 2" decoding="async" loading="lazy" src="img/section7/main-digital-assets-02.png"/>
+      <iframe src="img/section7/banner-di-2/index.html" title="Animated banner 300x600" loading="lazy" scrolling="no" width="300" height="600" style="border:none;overflow:hidden;"></iframe>
     </figure>
     <figure class="digital-item di-3">
       <img alt="Digital banner example 3" decoding="async" loading="lazy" src="img/section7/main-digital-assets-03.png"/>
@@ -218,7 +212,7 @@
         <img alt="Digital banner example 5" decoding="async" loading="lazy" src="img/section7/main-digital-assets-05.png"/>
       </figure>
       <figure class="digital-item di-6">
-        <img alt="Digital banner example 6" decoding="async" loading="lazy" src="img/section7/main-digital-assets-06.png"/>
+        <iframe src="img/section7/banner-di-6/index.html" title="Animated banner 970x250" loading="lazy" scrolling="no" width="970" height="250" style="border:none;overflow:hidden;"></iframe>
       </figure>
     </div>
   </div>
@@ -309,5 +303,53 @@
 </button>
 <script src="js/i18n.js"></script>
 <script src="js/main.js"></script>
+<script>
+(function(){
+  function scaleBannerIframes(){
+    document.querySelectorAll('.digital-item iframe').forEach(function(iframe){
+      var fig = iframe.parentElement;
+      var nativeW = parseInt(iframe.getAttribute('width'),10);
+      var nativeH = parseInt(iframe.getAttribute('height'),10);
+      if(!nativeW || !nativeH) return;
+      var scaleW = fig.clientWidth / nativeW;
+      var scaleH = fig.clientHeight / nativeH;
+      var scale = Math.min(scaleW, scaleH);
+      // Reset styles
+      iframe.style.position = '';
+      iframe.style.left = '';
+      iframe.style.top = '';
+      iframe.style.transform = '';
+      iframe.style.transformOrigin = '';
+      iframe.style.zoom = '';
+      fig.style.position = '';
+      fig.style.display = '';
+      fig.style.alignItems = '';
+      fig.style.justifyContent = '';
+      if (fig.classList.contains('di-2')) {
+        // di-2: use zoom + flex centering
+        iframe.style.zoom = scale;
+        iframe.style.display = 'block';
+        fig.style.display = 'flex';
+        fig.style.alignItems = 'center';
+        fig.style.justifyContent = 'center';
+      } else {
+        // di-6: use transform scale + absolute centering
+        fig.style.position = 'relative';
+        iframe.style.position = 'absolute';
+        iframe.style.left = '50%';
+        iframe.style.top = '50%';
+        iframe.style.transformOrigin = 'center center';
+        iframe.style.transform = 'translate(-50%,-50%) scale(' + scale + ')';
+      }
+    });
+  }
+  scaleBannerIframes();
+  var resizeTimer;
+  window.addEventListener('resize', function(){
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(scaleBannerIframes, 50);
+  });
+})();
+</script>
 </body>
 </html>

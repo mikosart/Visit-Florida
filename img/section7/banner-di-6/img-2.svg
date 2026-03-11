@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="970" height="250" viewBox="0 0 970 250">
+  <defs>
+    <clipPath id="clip-_970x250-subtract_mask-teal">
+      <rect width="970" height="250"/>
+    </clipPath>
+  </defs>
+  <g id="_970x250-subtract_mask-teal" data-name="970x250-subtract mask-teal" clip-path="url(#clip-_970x250-subtract_mask-teal)">
+    <rect width="970" height="250" fill="rgba(255,255,255,0)"/>
+    <path id="Subtraction_4" data-name="Subtraction 4" d="M-1796-9635h-970v-250h970v250Zm-460-232a14.905,14.905,0,0,0-10.607,4.394A14.9,14.9,0,0,0-2271-9852v185a14.9,14.9,0,0,0,4.395,10.605A14.9,14.9,0,0,0-2256-9652h426a14.905,14.905,0,0,0,10.607-4.394A14.9,14.9,0,0,0-1815-9667v-185a14.9,14.9,0,0,0-4.395-10.605A14.905,14.905,0,0,0-1830-9867Z" transform="translate(2766 9885)" fill="#00bcaf"/>
+  </g>
+</svg>

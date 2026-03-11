@@ -1102,10 +1102,15 @@ html[lang="es"] .h2--image-considerations{
 }
 
 /* Horizontal banners centered in their column, with consistent inset */
-.di-5,
-.di-6{
+.di-5{
   aspect-ratio: 954 / 272;
-  width: min(100%, 650px);
+  width: 100%;
+  max-width: 800px;
+}
+.di-6{
+  aspect-ratio: 970 / 250;
+  width: 100%;
+  max-width: 800px;
 }
 
 @media (max-width: 860px){
@@ -1117,20 +1122,41 @@ html[lang="es"] .h2--image-considerations{
 }
 
 @media (max-width: 560px){
-  /* Preserve the collage on small screens; tighten spacing */
   .digital-card{ --da-gap: 14px; }
 
-  .digital-bottom{
-    grid-template-columns: auto 1fr;
+  .digital-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--da-gap);
+  }
+  .digital-top,
+  .digital-bottom,
+  .digital-bottom__stack{
+    display: contents;
   }
 
+  /* Row 1: di-1 + di-2 */
+  .di-1{ grid-column: 1; grid-row: 1; aspect-ratio: 443 / 788; }
+  .di-2{ grid-column: 2; grid-row: 1; aspect-ratio: 444 / 788; }
+
+  /* Row 2: di-3 + di-4 (smaller) */
+  .di-3{ grid-column: 1; grid-row: 2; aspect-ratio: auto; max-width: 50%; justify-self: center; }
   .di-4{
-    width: clamp(86px, 22vw, 120px);
+    grid-column: 2; grid-row: 2;
+    width: 50%;
+    aspect-ratio: auto;
+    justify-self: center;
   }
 
-  .di-5,
-  .di-6{
+  /* Row 3-4: di-5 + di-6 full width */
+  .di-5{
+    grid-column: 1 / -1; grid-row: 3;
     width: 100%;
+  }
+  .di-6{
+    grid-column: 1 / -1; grid-row: 4;
+    width: 100%;
+    aspect-ratio: 970 / 250;
   }
 }
 

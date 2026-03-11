@@ -1,0 +1,1318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Brand Guidelines &amp; Logos | Live More Floridays Toolkit</title>
+  <link rel="stylesheet" href="../css/main.css"/>
+  <style>
+    /* ── Sticky bar (always visible under header) ── */
+    .con-stickybar {
+      position: fixed;
+      top: calc(var(--fixed-header-h, 80px) - 1px);
+      left: 0;
+      right: 0;
+      z-index: 900;
+      background: #fff;
+      box-shadow: 0 1px 4px rgba(0,0,0,.06);
+    }
+    .con-stickybar__inner {
+      width: var(--stage-w, min(1100px, calc(100vw - 64px)));
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 8px 0;
+    }
+    .con-back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 2px 16px 0px 10px;
+      border-radius: 999px;
+      border: 2px solid var(--ocean-blue, #098BE9);
+      background: transparent;
+      color: var(--ocean-blue, #098BE9);
+      text-decoration: none;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      font-size: 13px;
+      line-height: 1.8;
+      transition: background .2s;
+      flex-shrink: 0;
+    }
+    .con-back-btn:hover {
+      background: rgba(9,139,233,0.08);
+    }
+
+    /* ── Title section (sand background, matching index) ── */
+    .con-title-section {
+      background: var(--white-sano, #FFFFFB);
+      text-align: center;
+      padding: 100px 24px 70px;
+    }
+    .con-title-section h1 {
+      font-weight: 800;
+      font-size: clamp(48px, 7vw, 90px);
+      letter-spacing: 0.01em;
+      color: var(--turtle-green);
+      text-transform: uppercase;
+      line-height: 0.95;
+      margin: 0 0 40px;
+    }
+    .con-qn-label {
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: .1em;
+      color: var(--ocean-blue, #098BE9);
+      margin-bottom: 20px;
+      text-transform: uppercase;
+    }
+
+    /* ── Quick-nav pills (reuse hub-btn style, 2 rows) ── */
+    .con-quicknav {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      max-width: 850px;
+      margin: 0 auto;
+    }
+    .con-quicknav__row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+    }
+
+    /* ── Sticky pills (hidden until scroll) ── */
+    .con-stickybar__pills {
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 8px;
+      justify-content: center;
+      flex: 1;
+      min-width: 0;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .3s ease;
+    }
+    .con-stickybar__pills--visible {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .con-sticky__pill {
+      display: inline-block;
+      padding: 7px 14px;
+      border-radius: 6px;
+      background: var(--ocean-blue, #098BE9);
+      color: var(--white-sano, #FFFFFB);
+      font-size: clamp(9px, 1.1vw, 12px);
+      font-weight: 700;
+      letter-spacing: .03em;
+      text-decoration: none;
+      text-align: center;
+      cursor: pointer;
+      transition: background .2s;
+      white-space: nowrap;
+      flex-shrink: 1;
+      min-width: 0;
+    }
+    .con-sticky__pill:hover { background: var(--bougainvillea, #E11F8F); }
+    .con-sticky__pill--active {
+      background: var(--bougainvillea, #E11F8F);
+    }
+
+    /* ── Dropdown toggle pill (hidden by default, shown on mobile when pills visible) ── */
+    .con-stickybar__toggle {
+      display: none;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 14px;
+      border-radius: 6px;
+      border: none;
+      background: var(--ocean-blue, #098BE9);
+      color: var(--white-sano, #FFFFFB);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .03em;
+      text-transform: uppercase;
+      cursor: pointer;
+      flex-shrink: 0;
+      margin-left: auto;
+      transition: background .2s;
+      white-space: nowrap;
+    }
+    .con-stickybar__toggle:hover {
+      background: var(--bougainvillea, #E11F8F);
+    }
+    .con-stickybar__toggle svg {
+      width: 12px;
+      height: 12px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      transition: transform .2s;
+    }
+    .con-stickybar__toggle--open svg {
+      transform: rotate(180deg);
+    }
+
+    /* ── Dropdown panel ── */
+    .con-stickybar__dropdown {
+      display: none;
+      position: absolute;
+      top: 100%;
+      right: 0;
+      background: #fff;
+      border-radius: 0 0 10px 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,.12);
+      padding: 10px;
+      flex-direction: column;
+      gap: 6px;
+      min-width: 200px;
+      z-index: 901;
+    }
+    .con-stickybar__dropdown--open {
+      display: flex;
+    }
+    .con-stickybar__dropdown .con-sticky__pill {
+      font-size: 12px;
+      padding: 8px 14px;
+      text-align: left;
+    }
+
+    /* ── Section wrappers ── */
+    .con-section-wrap {
+      scroll-margin-top: calc(var(--fixed-header-h, 80px) + 56px);
+    }
+    #con-brand-guidelines .bg-sec--s1 .bv-title {
+      margin-top: 60px;
+    }
+
+    /* ── Responsive: switch to dropdown ── */
+    @media (max-width: 680px) {
+      .con-stickybar__pills { display: none !important; }
+      .con-stickybar__toggle--ready { display: flex; }
+      .con-stickybar__inner { position: relative; }
+    }
+    @media (max-width: 768px) {
+      .con-title-section { padding: 60px 16px 50px; }
+      .con-stickybar__inner {
+        padding: 8px 0;
+        gap: 8px;
+      }
+      .con-quicknav { gap: 8px; }
+      .con-quicknav__row {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+      }
+      .con-quicknav .hub-btn {
+        min-width: 200px;
+        white-space: normal;
+      }
+    }
+  </style>
+</head>
+<body class="page page--brand-guidelines page--vf-logo-guidelines page--vf-logo-lockup-guidelines page--campaign-mark-guidelines page--graphic-assets">
+
+  <!-- ════════ HEADER ════════ -->
+  <header class="site-header" id="header" role="banner">
+    <div class="site-header__inner">
+      <a class="vf-brand__logo" aria-label="Back to main toolkit" href="../index.html#top">
+        <img src="../img/logo_pink.png" alt="VISIT FLORIDA"/>
+      </a>
+      <nav class="vf-flags" aria-label="Language selector">
+        <a class="vf-flag" href="#" aria-label="English (US)"><img src="../img/flags_lang-en-us.png" alt="English (US)"/></a>
+        <a class="vf-flag" href="#" aria-label="Español"><img src="../img/flags_lang-es.png" alt="Español"/></a>
+        <a class="vf-flag" href="#" aria-label="Português (Brasil)"><img src="../img/flags_lang-pt-br.png" alt="Português (Brasil)"/></a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="site-main" id="top">
+
+    <!-- ════════ UNIFIED STICKY BAR (always fixed under header) ════════ -->
+    <div class="con-stickybar" id="conStickybar">
+      <div class="con-stickybar__inner">
+        <a class="con-back-btn" href="../index.html#brand-guidelines" aria-label="Back to main toolkit">
+          <span aria-hidden="true">&#8249;</span>
+          <span data-i18n="bg.back">BACK</span>
+        </a>
+        <div class="con-stickybar__pills" id="conStickyPills">
+          <a class="con-sticky__pill" href="#con-brand-guidelines" data-i18n="con.pill.brand">BRAND GUIDELINES</a>
+          <a class="con-sticky__pill" href="#con-vf-logo" data-i18n="con.pill.vflogo">VF LOGO</a>
+          <a class="con-sticky__pill" href="#con-partner-logo" data-i18n="con.pill.partner">PARTNER LOCKUP</a>
+          <a class="con-sticky__pill" href="#con-campaign-mark" data-i18n="con.pill.campaign">CAMPAIGN MARK</a>
+          <a class="con-sticky__pill" href="#con-graphic-assets" data-i18n="con.pill.assets">GRAPHIC ASSETS</a>
+        </div>
+        <!-- Mobile dropdown toggle -->
+        <button class="con-stickybar__toggle" id="conNavToggle" aria-label="Navigation menu">
+          <span data-i18n="con.toggle.label">SECTIONS</span>
+          <svg viewBox="0 0 12 12"><path d="M2 4l4 4 4-4"/></svg>
+        </button>
+        <div class="con-stickybar__dropdown" id="conNavDropdown">
+          <a class="con-sticky__pill" href="#con-brand-guidelines" data-i18n="con.pill.brand">BRAND GUIDELINES</a>
+          <a class="con-sticky__pill" href="#con-vf-logo" data-i18n="con.pill.vflogo">VF LOGO</a>
+          <a class="con-sticky__pill" href="#con-partner-logo" data-i18n="con.pill.partner">PARTNER LOCKUP</a>
+          <a class="con-sticky__pill" href="#con-campaign-mark" data-i18n="con.pill.campaign">CAMPAIGN MARK</a>
+          <a class="con-sticky__pill" href="#con-graphic-assets" data-i18n="con.pill.assets">GRAPHIC ASSETS</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ════════ TITLE + QUICK NAV (sand bg) ════════ -->
+    <div class="con-title-section" id="con-title">
+      <h1 data-i18n="consolidated.title">BRAND<br/>GUIDELINES<br/>&amp; LOGOS</h1>
+      <p class="con-qn-label" data-i18n="con.qn.label">QUICK NAVIGATION</p>
+      <nav class="con-quicknav" id="conQuickNav" aria-label="Quick navigation">
+        <div class="con-quicknav__row">
+          <a class="hub-btn" href="#con-brand-guidelines" data-i18n="index.brand.btn1">BRAND<br/>GUIDELINES</a>
+          <a class="hub-btn" href="#con-vf-logo" data-i18n="index.brand.btn2">VISIT FLORIDA<br/>LOGO GUIDELINES</a>
+          <a class="hub-btn" href="#con-partner-logo" data-i18n="index.brand.btn3">PARTNER LOGO<br/>LOCKUP GUIDELINES</a>
+        </div>
+        <div class="con-quicknav__row">
+          <a class="hub-btn" href="#con-campaign-mark" data-i18n="index.brand.btn4">CAMPAIGN MARK<br/>GUIDELINES</a>
+          <a class="hub-btn" href="#con-graphic-assets" data-i18n="index.brand.btn5">GRAPHIC<br/>ASSETS</a>
+        </div>
+      </nav>
+    </div>
+
+
+
+    <!-- ╔══════════════════════════════════════════════════════════════╗
+         ║  SECTION 1 — BRAND GUIDELINES                              ║
+         ╚══════════════════════════════════════════════════════════════╝ -->
+    <div class="con-section-wrap" id="con-brand-guidelines">
+
+      <!-- 01 — BRAND VOICE -->
+      <section class="section bg-sec bg-sec--blue bg-sec--s1" id="brand-voice">
+        <div class="stage bg-stage">
+          <h1 class="bv-title" data-i18n="bg.voice.title">BRAND<br/>VOICE</h1>
+          <p class="bv-subtitle" data-i18n="bg.voice.sub">THE SUNSHINE GUIDE</p>
+          <div class="bv-copy">
+            <p data-i18n="bg.voice.p1">
+              Florida isn't just a destination, it's an open invitation to live in a sunkissed state of mind - to indulge in what you love and feel comfortable trying something new and Live More Floridays.
+            </p>
+            <p data-i18n="bg.voice.p2">
+              Our tone is warm and welcoming, just like the Florida sun. We radiate the kind of optimism that makes the expansiveness of the state feel accessible and brimming with possibility. Our voice strikes the right balance of welcoming, adventurous, knowledgeable and charismatic in a way that builds trust, brings inspiration and fosters real connections with potential visitors.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 02 — FONTS & USAGE -->
+      <section class="section bg-sec bg-sec--cream bg-sec--s2" id="fonts-type">
+        <div class="stage bg-stage">
+          <h2 class="bg-title bg-title--green" data-i18n="bg.fonts.title">FONTS &amp;<br/>USAGE</h2>
+          <div class="bg-desc bg-desc--blue">
+            <p data-i18n="bg.fonts.p1">The headlines use a friendly, attention grabbing font called Allotrope.</p>
+            <p data-i18n="bg.fonts.p2">In order to maintain proper hierarchy, headlines should always be larger than subheads, and subheads should be larger than body copy.</p>
+          </div>
+          <div class="fu-specimens" aria-label="Typography specimens">
+            <div class="type-block">
+              <div class="type-label" data-i18n="bg.fonts.headlines">
+                <span style="font-weight:800;">HEADLINES - ALLOTROPE EXTRABOLD | </span>
+                <span style="font-weight:400;">Kerning 2% or 6pts</span>
+              </div>
+              <div class="type-rule" aria-hidden="true"></div>
+              <pre class="type-sample type-sample--xb">ABCDEFGHIJKLMNOPQRSTUVWXYZ
+abcdefghijklmnopqrstuvwxyz
+0123456789!@#$%^&amp;*()[]?+</pre>
+            </div>
+            <div class="type-block">
+              <div class="type-label" data-i18n="bg.fonts.subheadlines">
+                <span style="font-weight:800;">SUBHEADS - ALLOTROPE MEDIUM | </span>
+                <span style="font-weight:400;">Kerning 2% or 6pts</span>
+              </div>
+              <div class="type-rule" aria-hidden="true"></div>
+              <pre class="type-sample type-sample--md">ABCDEFGHIJKLMNOPQRSTUVWXYZ
+abcdefghijklmnopqrstuvwxyz
+0123456789!@#$%^&amp;*()[]?+</pre>
+            </div>
+            <div style="display: flex; gap: 32px; flex-wrap: wrap; align-items: flex-start; margin-top: 24px;">
+              <div class="type-block" style="flex:1 1 0; min-width: 260px;">
+                <div class="type-label" data-i18n="bg.fonts.body">BODY COPY - ALLOTROPE REGULAR</div>
+                <div class="type-rule" aria-hidden="true"></div>
+                <pre class="type-sample type-sample--rg">ABCDEFGHIJKLMNOPQRSTUVWXYZ
+abcdefghijklmnopqrstuvwxyz
+0123456789!@#$%^&amp;*()[]?+</pre>
+              </div>
+              <div class="type-block type-block--two" style="flex:1 1 0; min-width: 260px;">
+                <div class="type-label" data-i18n="bg.fonts.callouts">CALLOUTS/CAPTIONS - NEILVARD TWO</div>
+                <div class="type-rule" aria-hidden="true"></div>
+                <pre class="type-sample type-sample--callouts">ABCDEFGHIJKLMNOPQRSTUVWXYZ
+0123456789!@#$%^&amp;*()[]?+</pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 03 — TYPOGRAPHY COLOR PAIRINGS -->
+      <section class="section bg-sec bg-sec--pink bg-sec--s3" id="typography-color-pairings">
+        <div class="stage bg-stage">
+          <h2 class="bg-title bg-title--white" data-i18n="bg.typo.title">TYPOGRAPHY COLOR PAIRINGS</h2>
+          <div class="bg-desc bg-desc--white">
+            <p data-i18n="bg.typo.p1">Shown here are approved typography and background color combinations for maximum legibility.</p>
+            <br>
+            <p data-i18n="bg.typo.p2">Always use white text over images or video backgrounds. Ensure that all background imagery provides sufficient contrast for text legibility. Images may need to be adjusted</p>
+            <p data-i18n="bg.typo.p2b">(e.g., darkened or blurred) to meet accessibility and readability standards.</p>
+          </div>
+          <div class="bg-card bg-card--flat">
+            <div class="bg-grid bg-grid--3">
+              <img src="../img/pages/brand-guidelines/br-02-typography-color-pairings-01.png" alt="Typography color pairing 01"/>
+              <img src="../img/pages/brand-guidelines/br-02-typography-color-pairings-02.png" alt="Typography color pairing 02"/>
+              <img src="../img/pages/brand-guidelines/br-02-typography-color-pairings-03.png" alt="Typography color pairing 03"/>
+              <img src="../img/pages/brand-guidelines/br-02-typography-color-pairings-04.png" alt="Typography color pairing 04"/>
+              <img src="../img/pages/brand-guidelines/br-02-typography-color-pairings-05.png" alt="Typography color pairing 05"/>
+              <img src="../img/pages/brand-guidelines/br-02-typography-color-pairings-06.png" alt="Typography color pairing 06"/>
+              <img src="../img/pages/brand-guidelines/br-02-typography-color-pairings-07.png" alt="Typography color pairing 07"/>
+              <img src="../img/pages/brand-guidelines/br-02-typography-color-pairings-08.png" alt="Typography color pairing 08"/>
+              <img src="../img/pages/brand-guidelines/br-02-typography-color-pairings-09.png" alt="Typography color pairing 09"/>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 04 — HEADLINE PLACEMENT -->
+      <section class="section bg-sec bg-sec--cream bg-sec--s4" id="headline-placement">
+        <div class="stage bg-stage">
+          <h2 class="bg-title bg-title--green" data-i18n="bg.headline.title">HEADLINE<br/>PLACEMENT</h2>
+          <div class="bg-desc bg-desc--blue">
+            <p data-i18n="bg.headline.p1">Headline typography is meant to make a statement; it's big, bold, and graphic.</p>
+            <br>
+            <p data-i18n="bg.headline.p2">It should ideally take up 30% of the total image area, but can vary slightly based on size and headline length. Headlines can weave behind or atop imagery. The preferred alignment is left-aligned on the left side of the compositions.</p>
+            <br>
+            <p data-i18n="bg.headline.p3">Headlines should be in all-caps and the same size. Utilizing multiple font sizes in one headline should be avoided where possible. Headlines are often stacked and narrow. To achieve this, the number of words per line should be less than four.</p>
+          </div>
+          <div class="bg-media bg-media--wide">
+            <div class="bg-grid bg-grid--2 bg-grid--tight">
+              <img src="../img/pages/brand-guidelines/br-03-headline-placement-01.png" alt="Headline placement example 01"/>
+              <img src="../img/pages/brand-guidelines/br-03-headline-placement-02.png" alt="Headline placement example 02"/>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 05 — COLOR PALETTE -->
+      <section class="section bg-sec bg-sec--blue bg-sec--s5" id="color-palette">
+        <div class="stage bg-stage">
+          <h2 class="bg-title bg-title--white" data-i18n="bg.palette.title">COLOR<br/>PALETTE</h2>
+          <div class="bg-desc bg-desc--white">
+            <p data-i18n="bg.palette.p1">The Live More Floridays color palette is bold, tropical, and vibrant - perfectly tuned for Florida.</p>
+            <br>
+            <p data-i18n="bg.palette.p2">From saturated sunsets to crystal-clear waters and lush greenery, it captures the full spectrum of Florida's natural beauty.</p>
+            <br>
+            <p data-i18n="bg.palette.p3">Together, these colors bring the spirit of Florida to life - sunny, lively, and endlessly colorful.</p>
+          </div>
+          <div class="bg-card">
+            <img class="bg-full" src="../img/pages/brand-guidelines/br-04-color-palette-01.png" alt="Color palette"/>
+          </div>
+        </div>
+      </section>
+
+      <!-- 06 — COLOR PALETTE APPLICATION -->
+      <section class="section bg-sec bg-sec--cream bg-sec--s6" id="color-palette-application">
+        <div class="stage bg-stage">
+          <h2 class="bg-title bg-title--green" data-i18n="bg.paletteapp.title">COLOR PALETTE<br/>APPLICATION</h2>
+          <div class="bg-desc bg-desc--blue">
+            <p data-i18n="bg.paletteapp.p1">Shown here are examples of how the color palette can come to life in creative tactics.</p>
+            <br>
+            <p data-i18n="bg.paletteapp.p2">Imagery with natural tones reflecting the brand palette is preferred, in order to complement and strengthen the color system.</p>
+          </div>
+          <div class="bg-media bg-media--wide">
+            <div class="bg-grid bg-grid--3 bg-grid--tight">
+              <img src="../img/pages/brand-guidelines/br-05-color-palette-application-01.png" alt="Color palette application 01"/>
+              <img src="../img/pages/brand-guidelines/br-05-color-palette-application-02.png" alt="Color palette application 02"/>
+              <img src="../img/pages/brand-guidelines/br-05-color-palette-application-03.png" alt="Color palette application 03"/>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 07 — COLOR PAIRING STRATEGIES -->
+      <section class="section bg-sec bg-sec--pink bg-sec--s7" id="color-pairing-strategies">
+        <div class="stage bg-stage">
+          <h2 class="bg-title bg-title--white" data-i18n="bg.strategy.title">COLOR PAIRING<br/>STRATEGIES</h2>
+          <div class="bg-desc bg-desc--white">
+            <p data-i18n="bg.strategy.p1">There are two primary strategies for color pairing. Both methods can effectively support the brand, and the choice should depend on the desired tone and visual impact of the execution in relation to surrounding visuals.</p>
+          </div>
+          <div class="cps-strategies">
+            <div class="cps-item">
+              <div class="cps-kicker" data-i18n="bg.strategy.comp.title">COMPLEMENTARY COLORS</div>
+              <div class="cps-text" data-i18n="bg.strategy.comp.desc">Select brand colors that share similar tones with the image to create a subtle and harmonious execution.</div>
+            </div>
+            <div class="cps-item">
+              <div class="cps-kicker" data-i18n="bg.strategy.contrast.title">CONTRASTING COLORS</div>
+              <div class="cps-text" data-i18n="bg.strategy.contrast.desc">Select analogous brand colors that have opposite tones with the image to create a bold and vibrant execution.</div>
+            </div>
+          </div>
+          <div class="bg-card cps-card">
+            <div class="cps-pair">
+              <div class="cps-pair__image">
+                <img src="../img/pages/brand-guidelines/br-06-color-pairing-strategies-01.png" alt="Color pairing strategy 01"/>
+              </div>
+              <div class="cps-caption">
+                <div class="cps-caption__label" data-i18n="bg.strategy.comp.example.label">COMPLEMENTARY COLOR PAIRING:</div>
+                <div class="cps-caption__text" data-i18n="bg.strategy.comp.example.text">Background color is complementary to the tone of the imagery, creating a subtle and harmonious execution.</div>
+              </div>
+            </div>
+            <div class="cps-pair">
+              <div class="cps-pair__image">
+                <img src="../img/pages/brand-guidelines/br-06-color-pairing-strategies-02.png" alt="Color pairing strategy 02"/>
+              </div>
+              <div class="cps-caption">
+                <div class="cps-caption__label" data-i18n="bg.strategy.contrast.example.label">CONTRASTING COLOR PAIRING:</div>
+                <div class="cps-caption__text" data-i18n="bg.strategy.contrast.example.text">Background color is contrasting to the tone of the imagery, creating a bold and vibrant execution.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 08 — SEASONAL COLOR USAGE -->
+      <section class="section bg-sec bg-sec--cream bg-sec--s8" id="seasonal-color-usage">
+        <div class="stage bg-stage">
+          <h2 class="bg-title bg-title--green" data-i18n="bg.seasonal.title">SEASONAL<br/>COLOR USAGE</h2>
+          <div class="bg-desc bg-desc--blue">
+            <p data-i18n="bg.seasonal.p1">Color should be thoughtfully applied with attention to both season timing and geographic relevance. The final materials should evoke the mood and atmosphere Florida provides during that time.</p>
+            <br>
+            <p data-i18n="bg.seasonal.p2">The full brand color palette can be used year-round across all markets and seasonal color combinations are illustrated here.</p>
+          </div>
+          <div class="scu-kicker">Seasonal combinations shown</div>
+          <div class="bg-media bg-media--wide">
+            <div class="scu-grid">
+              <figure class="scu-item">
+                <img src="../img/pages/brand-guidelines/br-07-seasonal-color-usage-01.png" alt="Primary warm palette"/>
+                <figcaption data-i18n="bg.seasonal.warm.primary">PRIMARY WARM PALETTE</figcaption>
+              </figure>
+              <figure class="scu-item">
+                <img src="../img/pages/brand-guidelines/br-07-seasonal-color-usage-02.png" alt="Primary cool palette"/>
+                <figcaption data-i18n="bg.seasonal.cool.primary">PRIMARY COOL PALETTE</figcaption>
+              </figure>
+              <figure class="scu-item">
+                <img src="../img/pages/brand-guidelines/br-07-seasonal-color-usage-03.png" alt="Complementary warm palette"/>
+                <figcaption data-i18n="bg.seasonal.warm.comp">COMPLEMENTARY WARM PALETTE</figcaption>
+              </figure>
+              <figure class="scu-item">
+                <img src="../img/pages/brand-guidelines/br-07-seasonal-color-usage-04.png" alt="Complementary cool palette"/>
+                <figcaption data-i18n="bg.seasonal.cool.comp">COMPLEMENTARY COOL PALETTE</figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div><!-- /con-brand-guidelines -->
+
+
+    <!-- ╔══════════════════════════════════════════════════════════════╗
+         ║  SECTION 2 — VF LOGO GUIDELINES                            ║
+         ╚══════════════════════════════════════════════════════════════╝ -->
+    <div class="con-section-wrap" id="con-vf-logo">
+
+      <!-- VISIT FLORIDA LOGO (cream) -->
+      <section class="section section--cream vflg vflg--s1" id="vflg-logo">
+        <div class="stage vflg-stage vflg-stage--s1">
+          <h1 class="vflg-title vflg-title--green" data-i18n="vflg.title">VISIT FLORIDA<br/>LOGO</h1>
+          <div class="vflg-copy">
+            <p data-i18n="vflg.p1">This is the VISIT FLORIDA brand logo. The preferred logo colors are Bougainvillea and White Sand, but other colors from the palette may be used for variation. There are two variations of this logo, the Primary Logo and the Small Use Case logo.</p>
+            <p data-i18n="vflg.p2">The Small Use Case logo is to be used when the format dictates smaller scales and should only appear between 110px wide and 220px wide in digital applications and 1.5" and .75" wide in print applications. All VISIT FLORIDA logos are not to be used below .75" wide.</p>
+            <p data-i18n="vflg.p3">The Small Use Case logo is primarily reserved for applications such as small scale banner ads and social media. Printed application formats will determine logo size based on inches.</p>
+          </div>
+          <div class="vflg-card">
+            <div class="vflg-block">
+              <p class="vflg-label" data-i18n="vflg.primary">PRIMARY LOGO</p>
+              <img alt="Primary logo" class="vflg-primarylogo" src="../img/pages/vf-logo-guidelines/01-primary-logo/primary/lg-01-primary-logo-01.png"/>
+            </div>
+            <div aria-hidden="true" class="vflg-rule"></div>
+            <div class="vflg-block">
+              <p class="vflg-label" data-i18n="vflg.smallcase">SMALL USE CASE LOGO</p>
+              <div class="vflg-suc-grid" role="group" aria-label="Small use case logos with size specs">
+                <div class="vflg-suc-item">
+                  <img alt="Primary logo small use case 01" class="vflg-suc-logo vflg-suc-logo--max" src="../img/pages/vf-logo-guidelines/01-primary-logo/small-use-case/vflg-primary-logo-small-use-case-01.png"/>
+                  <div class="vflg-suc-meta">
+                    <p class="vflg-size__title" data-i18n="vflg.maxsize">Maximum Size:</p>
+                    <p class="vflg-size__line" data-i18n="vflg.maxsize.val">Digital: 220px Wide | Print: 1.5&quot; Wide</p>
+                  </div>
+                </div>
+                <div class="vflg-suc-item">
+                  <img alt="Primary logo small use case 02" class="vflg-suc-logo vflg-suc-logo--min" src="../img/pages/vf-logo-guidelines/01-primary-logo/small-use-case/vflg-primary-logo-small-use-case-02.png"/>
+                  <div class="vflg-suc-meta">
+                    <p class="vflg-size__title" data-i18n="vflg.minsize">Minimum Size:</p>
+                    <p class="vflg-size__line" data-i18n="vflg.minsize.val">Digital: 110px Wide | Print: .75&quot; Wide</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div aria-hidden="true" class="vflg-rule"></div>
+            <h2 class="vflg-subtitle" data-i18n="vflg.clearspace.title">VISIT FLORIDA LOGO CLEAR SPACE</h2>
+            <div class="vflg-copy vflg-copy--compact">
+              <p data-i18n="vflg.clearspace.p1">Clear space is the minimum distance between the logo and other visual and written elements.</p>
+              <p data-i18n="vflg.clearspace.p2">The logo's clear space is equidistant to the height of the VISIT FLORIDA logo and applied all four sides of the logo.</p>
+            </div>
+            <div class="vflg-block">
+              <p class="vflg-label" data-i18n="vflg.primary">PRIMARY LOGO</p>
+              <img alt="Logo clear space - primary" class="vflg-img" src="../img/pages/vf-logo-guidelines/02-logo-clear-space/primary/vflg-logo-clear-space-primary-01.png"/>
+            </div>
+            <div aria-hidden="true" class="vflg-rule"></div>
+            <div class="vflg-block">
+              <p class="vflg-label" data-i18n="vflg.smallcase">SMALL USE CASE LOGO</p>
+              <div class="vflg-grid vflg-grid--2 vflg-grid--tight">
+                <img alt="Logo clear space small use case 01" class="vflg-img" src="../img/pages/vf-logo-guidelines/02-logo-clear-space/small-use-case/vflg-logo-clear-space-small-use-case-01.png"/>
+                <img alt="Logo clear space small use case 02" class="vflg-img" src="../img/pages/vf-logo-guidelines/02-logo-clear-space/small-use-case/vflg-logo-clear-space-small-use-case-02.png"/>
+              </div>
+            </div>
+          </div>
+          <div class="vflg-ctas">
+            <a aria-label="Download logos" class="hub-btn" href="https://visitflorida.box.com/s/7c1rjuo12z86m9lj45yvqyxtndf1pwrg" target="_blank" rel="noopener" data-i18n="vflg.download" data-i18n-href="href.vflg.download">DOWNLOAD LOGOS</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- LOGO COLOR + CONTRAST (blue) -->
+      <section class="section section--ocean vflg vflg--contrast" id="vflg-contrast">
+        <div class="stage vflg-stage">
+          <h2 class="vflg-title vflg-title--light" data-i18n="vflg.contrast.title">LOGO COLOR<br/>+ CONTRAST</h2>
+          <p class="vflg-body vflg-body--light vflg-body--s2" data-i18n="vflg.contrast.p1">
+            The examples shown here are preferred color combinations for the VISIT FLORIDA logo.
+          </p>
+          <p class="vflg-body vflg-body--light vflg-body--s2" data-i18n="vflg.contrast.p2">
+            In most applications, the logo will be used in white sand on image or colored background.
+            If a lighter background is needed, the Bougainvillea or Ocean blue can be used to provide
+            sufficient contrast while staying within the brand palette.
+          </p>
+          <div class="vflg-card vflg-card--contrast">
+            <div class="vflg-contrast">
+              <div class="vflg-contrast__groups" role="group" aria-label="Logo contrast examples">
+                <div class="vflg-contrast__group">
+                  <div class="vflg-contrast__head" data-i18n="vflg.contrast.white">LOGO ON WHITE</div>
+                  <div class="vflg-contrast__pair">
+                    <div class="vflg-contrast__cell">
+                      <img alt="Logo on white example 01" class="vflg-contrast__img" src="../img/pages/vf-logo-guidelines/03-logo-color-contrast/vflg-logo-color-contrast-01.png"/>
+                    </div>
+                    <div class="vflg-contrast__cell">
+                      <img alt="Logo on white example 02" class="vflg-contrast__img" src="../img/pages/vf-logo-guidelines/03-logo-color-contrast/vflg-logo-color-contrast-04.png"/>
+                    </div>
+                  </div>
+                </div>
+                <div class="vflg-contrast__group">
+                  <div class="vflg-contrast__head" data-i18n="vflg.contrast.color">LOGO ON COLOR</div>
+                  <div class="vflg-contrast__pair">
+                    <div class="vflg-contrast__cell">
+                      <img alt="Logo on color example 01" class="vflg-contrast__img" src="../img/pages/vf-logo-guidelines/03-logo-color-contrast/vflg-logo-color-contrast-02.png"/>
+                    </div>
+                    <div class="vflg-contrast__cell">
+                      <img alt="Logo on color example 02" class="vflg-contrast__img" src="../img/pages/vf-logo-guidelines/03-logo-color-contrast/vflg-logo-color-contrast-05.png"/>
+                    </div>
+                  </div>
+                </div>
+                <div class="vflg-contrast__group">
+                  <div class="vflg-contrast__head" data-i18n="vflg.contrast.imagery">LOGO ON IMAGERY</div>
+                  <div class="vflg-contrast__pair">
+                    <div class="vflg-contrast__cell">
+                      <img alt="Logo on imagery example 01" class="vflg-contrast__img" src="../img/pages/vf-logo-guidelines/03-logo-color-contrast/vflg-logo-color-contrast-03.png"/>
+                    </div>
+                    <div class="vflg-contrast__cell">
+                      <img alt="Logo on imagery example 02" class="vflg-contrast__img" src="../img/pages/vf-logo-guidelines/03-logo-color-contrast/vflg-logo-color-contrast-06.png"/>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- INCORRECT USAGE (cream) -->
+      <section class="section section--cream vflg vflg--incorrect" id="vflg-incorrect">
+        <div class="stage vflg-stage">
+          <h2 class="vflg-title vflg-title--green" data-i18n="vflg.incorrect.title">INCORRECT<br/>USAGE</h2>
+          <p class="vflg-body" data-i18n="vflg.incorrect.p1">Consistent use of the VISIT FLORIDA logo is key to maintaining brand recognition and visual integrity.</p>
+          <p class="vflg-body vflg-body--tight" data-i18n="vflg.incorrect.p2">Avoid the following to make sure the brand logo remains clear, legible and instantly recognizable.</p>
+          <div class="vflg-grid vflg-grid--3 vflg-iu-grid">
+            <div class="vflg-iu-item"><img alt="Do Not Stretch The Logo" class="vflg-img vflg-iu-img" src="../img/pages/vf-logo-guidelines/04-incorrect-usage/vflg-incorrect-usage-01.png"/><p class="vflg-iu-caption" data-i18n="vflg.iu1"><span class="vflg-iu-caption__lead">DO NOT</span> Stretch The Logo</p></div>
+            <div class="vflg-iu-item"><img alt="Do Not Rotate The Logo" class="vflg-img vflg-iu-img" src="../img/pages/vf-logo-guidelines/04-incorrect-usage/vflg-incorrect-usage-02.png"/><p class="vflg-iu-caption" data-i18n="vflg.iu2"><span class="vflg-iu-caption__lead">DO NOT</span> Rotate The Logo</p></div>
+            <div class="vflg-iu-item"><img alt="Do Not Outline The Logo" class="vflg-img vflg-iu-img" src="../img/pages/vf-logo-guidelines/04-incorrect-usage/vflg-incorrect-usage-03.png"/><p class="vflg-iu-caption" data-i18n="vflg.iu3"><span class="vflg-iu-caption__lead">DO NOT</span> Outline The Logo</p></div>
+            <div class="vflg-iu-item"><img alt="Do Not Modify The Placement Of Logo Parts" class="vflg-img vflg-iu-img" src="../img/pages/vf-logo-guidelines/04-incorrect-usage/vflg-incorrect-usage-04.png"/><p class="vflg-iu-caption" data-i18n="vflg.iu4"><span class="vflg-iu-caption__lead">DO NOT</span> Modify The Placement Of Logo Parts</p></div>
+            <div class="vflg-iu-item"><img alt="Do Not Apply A Harsh Drop Shadow To The Logo" class="vflg-img vflg-iu-img" src="../img/pages/vf-logo-guidelines/04-incorrect-usage/vflg-incorrect-usage-05.png"/><p class="vflg-iu-caption" data-i18n="vflg.iu5"><span class="vflg-iu-caption__lead">DO NOT</span> Apply A Harsh Drop Shadow To The Logo</p></div>
+            <div class="vflg-iu-item"><img alt="Do Not Remove Parts Of The Logo" class="vflg-img vflg-iu-img" src="../img/pages/vf-logo-guidelines/04-incorrect-usage/vflg-incorrect-usage-06.png"/><p class="vflg-iu-caption" data-i18n="vflg.iu6"><span class="vflg-iu-caption__lead">DO NOT</span> Remove Parts Of The Logo</p></div>
+            <div class="vflg-iu-item"><img alt="Do Not Apply An Approved Color To The Logo" class="vflg-img vflg-iu-img" src="../img/pages/vf-logo-guidelines/04-incorrect-usage/vflg-incorrect-usage-07.png"/><p class="vflg-iu-caption" data-i18n="vflg.iu7"><span class="vflg-iu-caption__lead">DO NOT</span> Apply An Approved Color To The Logo</p></div>
+            <div class="vflg-iu-item"><img alt="Do Not Apply A Gradient To The Logo" class="vflg-img vflg-iu-img" src="../img/pages/vf-logo-guidelines/04-incorrect-usage/vflg-incorrect-usage-08.png"/><p class="vflg-iu-caption" data-i18n="vflg.iu8"><span class="vflg-iu-caption__lead">DO NOT</span> Apply A Gradient To The Logo</p></div>
+            <div class="vflg-iu-item"><img alt="Do Not Resize Parts Of The Logo" class="vflg-img vflg-iu-img" src="../img/pages/vf-logo-guidelines/04-incorrect-usage/vflg-incorrect-usage-09.png"/><p class="vflg-iu-caption" data-i18n="vflg.iu9"><span class="vflg-iu-caption__lead">DO NOT</span> Resize Parts Of The Logo</p></div>
+          </div>
+          <div class="vflg-ctas">
+            <a aria-label="Partner logo lockup" class="hub-btn" href="https://visitflorida.box.com/s/jxisay0l7q7q5pm1p7xyjw6mijw3yvb0" target="_blank" rel="noopener" data-i18n="vflg.lockup.btn" data-i18n-href="href.vflg.lockup">PARTNER LOGO LOCKUP</a>
+          </div>
+        </div>
+      </section>
+
+    </div><!-- /con-vf-logo -->
+
+
+    <!-- ╔══════════════════════════════════════════════════════════════╗
+         ║  SECTION 3 — PARTNER LOGO LOCKUP GUIDELINES                ║
+         ╚══════════════════════════════════════════════════════════════╝ -->
+    <div class="con-section-wrap" id="con-partner-logo">
+
+      <!-- VISIT FLORIDA LOGO + PARTNER LOGO (cream) -->
+      <section class="section section--cream vfllg" id="vfllg-partner-logo">
+        <div class="stage vfllg-stage vfllg-stage--s1">
+
+          <h1 class="vfllg-title vfllg-title--green" data-i18n="vfllg.title">VISIT FLORIDA<br/>LOGO +<br/>PARTNER LOGO</h1>
+
+          <div class="vfllg-body vfllg-body--stack">
+            <p data-i18n="vfllg.p1">The Partner Logo lockups emphasize that VISIT FLORIDA and our partners are equal in collaboration.</p>
+            <p data-i18n="vfllg.p2">
+              When oriented vertically, the Partner Logo sits below the VISIT FLORIDA logo and is centered by the primary
+              <span class="vfllg-emph">element(s)</span> of the logo. Secondary elements like the trademark and copyright symbols should not be considered
+              in centering the logo.
+            </p>
+          </div>
+
+          <div class="vfllg-s1">
+            <div class="vfllg-std-pairs" aria-label="Standard partner lockup orientations">
+              <div class="vfllg-std-pair vfllg-std-pair--vertical">
+                <p class="vfllg-s1-label vfllg-s1a-label--vertical" data-i18n="vfllg.vertical">VERTICAL ORIENTATION</p>
+                <img class="vfllg-img vfllg-img--standard vfllg-img--vertical-std" src="../img/pages/vf-logo-lockup-guidelines/01-partner-logo/01-vertical/vfllg-partner-vertical-standard-01.png" alt="Vertical orientation"/>
+              </div>
+              <div class="vfllg-std-pair vfllg-std-pair--horizontal">
+                <p class="vfllg-s1-label vfllg-s1a-label--horizontal" data-i18n="vfllg.horizontal">HORIZONTAL ORIENTATION</p>
+                <img class="vfllg-img vfllg-img--standard vfllg-img--horizontal-std" src="../img/pages/vf-logo-lockup-guidelines/01-partner-logo/02-horizontal/vfllg-partner-horizontal-standard-01.png" alt="Horizontal orientation"/>
+              </div>
+            </div>
+
+            <p class="vfllg-s1-label vfllg-s1a-label--center" data-i18n="vfllg.vertical.small">VERTICAL ORIENTATION <span class="vfllg-s1-label--light">| SMALL USE CASE</span></p>
+            <div class="vfllg-row2 vfllg-row2--smalls">
+              <img class="vfllg-img vfllg-img--small vfllg-img--vertical-small-01" src="../img/pages/vf-logo-lockup-guidelines/01-partner-logo/03-vertical-small-use-case/vfllg-partner-vertical-small-01.png" alt="Vertical small use case 01"/>
+              <img class="vfllg-img vfllg-img--small vfllg-img--vertical-small-02" src="../img/pages/vf-logo-lockup-guidelines/01-partner-logo/03-vertical-small-use-case/vfllg-partner-vertical-small-02.png" alt="Vertical small use case 02"/>
+            </div>
+
+            <p class="vfllg-s1-label vfllg-s1a-label--center" data-i18n="vfllg.horizontal.small">HORIZONTAL ORIENTATION <span class="vfllg-s1-label--light">| SMALL USE CASE</span></p>
+            <div class="vfllg-smallcase-grid vfllg-smallcase-grid--horizontal">
+              <div class="vfllg-smallcase-item">
+                <img class="vfllg-img vfllg-img--small-h vfllg-img--horizontal-small-01" src="../img/pages/vf-logo-lockup-guidelines/01-partner-logo/04-horizontal-small-use-case/vfllg-partner-horizontal-small-01.png" alt="Horizontal small use case 01"/>
+                <div class="vfllg-size-item">
+                  <p class="vfllg-size-label__title" data-i18n="vfllg.maxsize">Maximum Size:</p>
+                  <p class="vfllg-size-label__line" data-i18n="vfllg.maxsize.val">Digital: 220px Wide | Print: 1.5" Wide</p>
+                </div>
+              </div>
+              <div class="vfllg-smallcase-item">
+                <img class="vfllg-img vfllg-img--small-h vfllg-img--horizontal-small-02" src="../img/pages/vf-logo-lockup-guidelines/01-partner-logo/04-horizontal-small-use-case/vfllg-partner-horizontal-small-02.png" alt="Horizontal small use case 02"/>
+                <div class="vfllg-size-item">
+                  <p class="vfllg-size-label__title" data-i18n="vfllg.minsize">Minimum Size:</p>
+                  <p class="vfllg-size-label__line" data-i18n="vfllg.minsize.val">Digital: 110px Wide | Print: .75" Wide</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- CLEAR SPACE -->
+            <h2 class="vfllg-subhead" data-i18n="vfllg.clearspace.title">VISIT FLORIDA LOGO + PARTNER LOGO CLEAR SPACE</h2>
+
+            <div class="vfllg-body vfllg-body--stack vfllg-body--clearspace">
+              <p data-i18n="vfllg.clearspace.p1">As with the primary logo, the Partner Logo should be large enough that it is clearly legible and in a space that is clear of other graphics.</p>
+              <p data-i18n="vfllg.clearspace.p2">The primary element(s) of the partner logo should be made the same height as the VISIT FLORIDA logo.</p>
+              <p data-i18n="vfllg.clearspace.p3">The logos clear space is equidistant to the height of the VISIT FLORIDA logo and applied to all four sides of the combined logo lockup.</p>
+              <p data-i18n="vfllg.clearspace.p4">Please note that the padding highlighted in blue in the standard use case logo lockup is split equally between one square.</p>
+            </div>
+
+            <div class="vfllg-cleargrid" role="group" aria-label="Partner logo clear space examples">
+              <div class="vfllg-clearitem">
+                <p class="vfllg-s1-label" data-i18n="vfllg.vertical">VERTICAL ORIENTATION</p>
+                <img class="vfllg-img vfllg-img--cs-standard" src="../img/pages/vf-logo-lockup-guidelines/02-partner-logo-clear-space/01-vertical/vfllg-clear-space-vertical-standard-01.png" alt="Vertical orientation clear space"/>
+              </div>
+              <div class="vfllg-clearitem">
+                <p class="vfllg-s1-label" data-i18n="vfllg.vertical.small">VERTICAL ORIENTATION <span class="vfllg-s1-label--light">| SMALL USE CASE</span></p>
+                <img class="vfllg-img vfllg-img--cs-small" src="../img/pages/vf-logo-lockup-guidelines/02-partner-logo-clear-space/01-vertical/llg-01vflpl-08.png" alt="Vertical orientation small use case"/>
+              </div>
+              <div class="vfllg-clearitem">
+                <p class="vfllg-s1-label" data-i18n="vfllg.horizontal">HORIZONTAL ORIENTATION</p>
+                <img class="vfllg-img vfllg-img--cs-wide" src="../img/pages/vf-logo-lockup-guidelines/02-partner-logo-clear-space/02-horizontal/vfllg-clear-space-horizontal-standard-01.png" alt="Horizontal orientation clear space"/>
+              </div>
+              <div class="vfllg-clearitem">
+                <p class="vfllg-s1-label" data-i18n="vfllg.horizontal.small">HORIZONTAL ORIENTATION <span class="vfllg-s1-label--light">| SMALL USE CASE</span></p>
+                <img class="vfllg-img vfllg-img--cs-smallwide" src="../img/pages/vf-logo-lockup-guidelines/02-partner-logo-clear-space/02-horizontal/llg-01vflpl-10.png" alt="Horizontal orientation small use case"/>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="vfllg-ctas">
+            <a class="hub-btn" href="https://visitflorida.box.com/s/7c1rjuo12z86m9lj45yvqyxtndf1pwrg" target="_blank" rel="noopener" aria-label="Download logos" data-i18n="vfllg.download" data-i18n-href="href.vfllg.download">DOWNLOAD LOGOS</a>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- INCORRECT USAGE (pink) -->
+      <section class="section section--pink vfllg" id="vfllg-incorrect">
+        <div class="stage vfllg-stage vfllg-stage--s2">
+
+          <h2 class="vfllg-title vfllg-title--light" data-i18n="vfllg.incorrect.title">VISIT FLORIDA<br/>LOGO +<br/>PARTNER LOGO<br/>INCORRECT USAGE</h2>
+
+          <div class="vfllg-body vfllg-body--light vfllg-body--s2">
+            <p data-i18n="vfllg.incorrect.p1">
+              It is important that our brand is accurately and consistently represented. The logo should not be altered in any way other than the size of the partner's logo.
+            </p>
+            <p data-i18n="vfllg.incorrect.p2">These rules apply to both the vertical and horizontal versions.</p>
+          </div>
+
+          <div class="vfllg-card vfllg-card--s2">
+            <div class="vfllg-grid vfllg-grid--3 vfllg-grid--s2">
+              <figure class="vfllg-fig">
+                <img class="vfllg-img vfllg-img--iu-01" src="../img/pages/vf-logo-lockup-guidelines/03-partner-logo-incorrect-usage/vfllg-incorrect-usage-01.png" alt="Do not flip the order of the logos"/>
+                <figcaption class="vfllg-caption" data-i18n="vfllg.iu1"><span class="vfllg-caption__bold">DO NOT</span> FLIP THE<br/>ORDER OF THE LOGOS</figcaption>
+              </figure>
+              <figure class="vfllg-fig">
+                <img class="vfllg-img vfllg-img--iu-02" src="../img/pages/vf-logo-lockup-guidelines/03-partner-logo-incorrect-usage/vfllg-incorrect-usage-02.png" alt="Do not alter the length of the dividing line"/>
+                <figcaption class="vfllg-caption" data-i18n="vfllg.iu2"><span class="vfllg-caption__bold">DO NOT</span> ALTER THE<br/>LENGTH OF THE DIVIDING LINE</figcaption>
+              </figure>
+              <figure class="vfllg-fig">
+                <img class="vfllg-img vfllg-img--iu-03" src="../img/pages/vf-logo-lockup-guidelines/03-partner-logo-incorrect-usage/vfllg-incorrect-usage-03.png" alt="Do not alter the space around the logos"/>
+                <figcaption class="vfllg-caption" data-i18n="vfllg.iu3"><span class="vfllg-caption__bold">DO NOT</span> ALTER THE<br/>SPACE AROUND THE LOGOS</figcaption>
+              </figure>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+    </div><!-- /con-partner-logo -->
+
+
+    <!-- ╔══════════════════════════════════════════════════════════════╗
+         ║  SECTION 4 — CAMPAIGN MARK GUIDELINES                      ║
+         ╚══════════════════════════════════════════════════════════════╝ -->
+    <div class="con-section-wrap" id="con-campaign-mark">
+
+      <!-- CAMPAIGN MARK (blue) -->
+      <section class="section section--ocean cmg" id="cmg-campaign-mark">
+        <div class="stage cmg-stage">
+
+          <h1 class="cmg-title cmg-title--light cmg-title--campaign" data-i18n="cmg.title">CAMPAIGN MARK</h1>
+
+          <div class="cmg-copy cmg-copy--light cmg-copy--s1">
+            <p data-i18n="cmg.p1">The Live More Floridays mark is bold and represents the feeling of our campaign. Variations are available to ensure flexibility across marketing materials and design layouts.</p>
+            <p data-i18n="cmg.p2">The primary mark has iconic graphics to represent the Sunshine State.</p>
+          </div>
+
+          <p class="cmg-kicker cmg-kicker--light" data-i18n="cmg.primary">PRIMARY CAMPAIGN MARK</p>
+          <div class="cmg-row-2 cmg-row-2--primary">
+            <img class="cmg-mark" src="../img/pages/campaign-mark-guidelines/01-campaign-mark/cmg-01-campaign-mark-01.png" alt="Primary campaign mark 01" data-i18n-img="../img/pages/campaign-mark-guidelines/01-campaign-mark/cmg-01-campaign-mark-01.png"/>
+            <img class="cmg-mark" src="../img/pages/campaign-mark-guidelines/01-campaign-mark/cmg-01-campaign-mark-02.png" alt="Primary campaign mark 02" data-i18n-img="../img/pages/campaign-mark-guidelines/01-campaign-mark/cmg-01-campaign-mark-02.png"/>
+          </div>
+
+          <div class="cmg-copy cmg-copy--light cmg-copy--s1 cmg-copy--tight">
+            <p data-i18n="cmg.secondary.text">This text-only version of the campaign mark is provided for applications where the design layout has competing visual elements that require larger legibility.</p>
+          </div>
+
+          <p class="cmg-kicker cmg-kicker--light" data-i18n="cmg.secondary">SECONDARY CAMPAIGN MARK</p>
+          <div class="cmg-single">
+            <img class="cmg-mark cmg-mark--secondary" src="../img/pages/campaign-mark-guidelines/01-campaign-mark/cmg-01-campaign-mark-03.png" alt="Secondary campaign mark" data-i18n-img="../img/pages/campaign-mark-guidelines/01-campaign-mark/cmg-01-campaign-mark-03.png"/>
+          </div>
+
+          <p class="cmg-kicker cmg-kicker--light" data-i18n="cmg.smalluse">SMALL USE CASE</p>
+          <div class="cmg-row-3 cmg-row-3--smalltop">
+            <img class="cmg-mark" src="../img/pages/campaign-mark-guidelines/01-campaign-mark/cmg-01-campaign-mark-04.png" alt="Small use case mark left" data-i18n-img="../img/pages/campaign-mark-guidelines/01-campaign-mark/cmg-01-campaign-mark-04.png"/>
+            <img class="cmg-mark" src="../img/pages/campaign-mark-guidelines/01-campaign-mark/cmg-01-campaign-mark-05.png" alt="Small use case mark center" data-i18n-img="../img/pages/campaign-mark-guidelines/01-campaign-mark/cmg-01-campaign-mark-05.png"/>
+            <img class="cmg-mark" src="../img/pages/campaign-mark-guidelines/01-campaign-mark/cmg-01-campaign-mark-06.png" alt="Small use case mark right" data-i18n-img="../img/pages/campaign-mark-guidelines/01-campaign-mark/cmg-01-campaign-mark-06.png"/>
+          </div>
+
+          <div class="cmg-min cmg-min--center">
+            <p class="cmg-min__title" data-i18n="cmg.maxsize.title">Maximum Size:</p>
+            <p class="cmg-min__text" data-i18n="cmg.maxsize.val">Digital: 220px Wide | Print: 1.5&quot; Wide</p>
+          </div>
+
+          <div class="cmg-row-3 cmg-row-3--smallbottom cmg-row-3--minstack">
+            <div class="cmg-min-item">
+              <img class="cmg-mark" src="../img/pages/campaign-mark-guidelines/01-campaign-mark/cmg-01-campaign-mark-07.png" alt="Small use case mark left (minimum)" data-i18n-img="../img/pages/campaign-mark-guidelines/01-campaign-mark/cmg-01-campaign-mark-07.png"/>
+              <div class="cmg-min">
+                <p class="cmg-min__title" data-i18n="cmg.minsize.title">Minimum Size:</p>
+                <p class="cmg-min__text" data-i18n="cmg.minsize.val1">Digital: 110px Wide | Print: .75&quot; Wide</p>
+              </div>
+            </div>
+            <div class="cmg-min-item">
+              <img class="cmg-mark" src="../img/pages/campaign-mark-guidelines/01-campaign-mark/cmg-01-campaign-mark-08.png" alt="Small use case mark center (minimum)" data-i18n-img="../img/pages/campaign-mark-guidelines/01-campaign-mark/cmg-01-campaign-mark-08.png"/>
+              <div class="cmg-min">
+                <p class="cmg-min__title" data-i18n="cmg.minsize.title">Minimum Size:</p>
+                <p class="cmg-min__text" data-i18n="cmg.minsize.val2">Digital: 220px Wide | Print: 1.5&quot; Wide</p>
+              </div>
+            </div>
+            <div class="cmg-min-item">
+              <img class="cmg-mark" src="../img/pages/campaign-mark-guidelines/01-campaign-mark/cmg-01-campaign-mark-09.png" alt="Small use case mark right (minimum)" data-i18n-img="../img/pages/campaign-mark-guidelines/01-campaign-mark/cmg-01-campaign-mark-09.png"/>
+              <div class="cmg-min">
+                <p class="cmg-min__title" data-i18n="cmg.minsize.title">Minimum Size:</p>
+                <p class="cmg-min__text" data-i18n="cmg.minsize.val1">Digital: 110px Wide | Print: .75&quot; Wide</p>
+              </div>
+            </div>
+          </div>
+
+          <a class="cmg-download" href="https://visitflorida.box.com/s/m34tsyslz1l1cjsvwaoz1qdvwd3s22nc" target="_blank" rel="noopener" aria-label="Download marks" data-i18n="cmg.download" data-i18n-href="href.cmg.download">DOWNLOAD MARKS</a>
+
+          <hr class="cmg-section-divider"/>
+
+        </div>
+      </section>
+
+      <!-- MARK ALIGNMENT (blue) -->
+      <section class="section section--ocean cmg" id="cmg-mark-alignment">
+        <div class="stage cmg-stage cmg-stage--ma">
+
+          <h2 class="cmg-title cmg-title--light cmg-title--alignment" data-i18n="cmg.alignment.title">MARK<br/>ALIGNMENT</h2>
+
+          <div class="cmg-copy cmg-copy--light">
+            <p data-i18n="cmg.alignment.p1">
+              Partner color options are also available for the "Live More Floridays" campaign mark. Center-aligned marks should
+              always be shown centered in layout and left-aligned marks should always be shown on the left side in design layouts.
+            </p>
+          </div>
+
+          <div class="cmg-ma-cols">
+            <div class="cmg-ma-col">
+              <p class="cmg-ma-col__title" data-i18n="cmg.centered">CENTERED</p>
+              <div class="cmg-ma-stack">
+                <img src="../img/pages/campaign-mark-guidelines/02-mark-alignment/cmg-02-mark-alignment-01.png" alt="Centered mark 01" data-i18n-img="../img/pages/campaign-mark-guidelines/02-mark-alignment/cmg-02-mark-alignment-01.png"/>
+                <img src="../img/pages/campaign-mark-guidelines/02-mark-alignment/cmg-02-mark-alignment-03.png" alt="Centered mark 02" data-i18n-img="../img/pages/campaign-mark-guidelines/02-mark-alignment/cmg-02-mark-alignment-03.png"/>
+                <img src="../img/pages/campaign-mark-guidelines/02-mark-alignment/cmg-02-mark-alignment-05.png" alt="Centered mark 03" data-i18n-img="../img/pages/campaign-mark-guidelines/02-mark-alignment/cmg-02-mark-alignment-05.png"/>
+              </div>
+            </div>
+            <div class="cmg-ma-col cmg-ma-col--left">
+              <p class="cmg-ma-col__title" data-i18n="cmg.leftaligned">LEFT ALIGNED</p>
+              <div class="cmg-ma-stack cmg-ma-stack--left">
+                <img src="../img/pages/campaign-mark-guidelines/02-mark-alignment/cmg-02-mark-alignment-02.png" alt="Left aligned mark 01" data-i18n-img="../img/pages/campaign-mark-guidelines/02-mark-alignment/cmg-02-mark-alignment-02.png"/>
+                <img src="../img/pages/campaign-mark-guidelines/02-mark-alignment/cmg-02-mark-alignment-04.png" alt="Left aligned mark 02" data-i18n-img="../img/pages/campaign-mark-guidelines/02-mark-alignment/cmg-02-mark-alignment-04.png"/>
+                <img src="../img/pages/campaign-mark-guidelines/02-mark-alignment/cmg-02-mark-alignment-06.png" alt="Left aligned mark 03" data-i18n-img="../img/pages/campaign-mark-guidelines/02-mark-alignment/cmg-02-mark-alignment-06.png"/>
+              </div>
+            </div>
+          </div>
+
+          <div class="cmg-whitecard cmg-ma-card">
+            <div class="cmg-ma-examples">
+              <div class="cmg-ma-images-row">
+                <img class="cmg-ma-img cmg-ma-img--center" src="../img/pages/campaign-mark-guidelines/02-mark-alignment/cmg-02-mark-alignment-07.png" alt="Centered layout example" data-i18n-img="../img/pages/campaign-mark-guidelines/02-mark-alignment/cmg-02-mark-alignment-07.png"/>
+                <img class="cmg-ma-img cmg-ma-img--left" src="../img/pages/campaign-mark-guidelines/02-mark-alignment/cmg-02-mark-alignment-08.png" alt="Left aligned layout example" data-i18n-img="../img/pages/campaign-mark-guidelines/02-mark-alignment/cmg-02-mark-alignment-08.png"/>
+              </div>
+              <div class="cmg-ma-captions-row">
+                <div class="cmg-ma-caption">
+                  <p class="cmg-ma-caption__title" data-i18n="cmg.center.title">CENTER-ALIGNED MARK PLACEMENT</p>
+                  <p class="cmg-ma-caption__text" data-i18n="cmg.center.text">
+                    Centered marks should <span class="cmg-ma-emphasis">always</span> be shown centered in layout. Centered mark should <span class="cmg-ma-emphasis">never</span> be shown on the left side in layout.
+                  </p>
+                </div>
+                <div class="cmg-ma-caption">
+                  <p class="cmg-ma-caption__title" data-i18n="cmg.left.title">LEFT-ALIGNED MARK PLACEMENT</p>
+                  <p class="cmg-ma-caption__text" data-i18n="cmg.left.text">
+                    Left-aligned marks should <span class="cmg-ma-emphasis">always</span> be shown on the left side in layout. Left-aligned marks should <span class="cmg-ma-emphasis">never</span> be shown centered in layout.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- PRIMARY COLOR (cream) -->
+      <section class="section section--cream cmg" id="cmg-primary-color">
+        <div class="stage cmg-stage cmg-stage--pc">
+
+          <h2 class="cmg-title cmg-title--green" data-i18n="cmg.color.title">PRIMARY<br/>COLOR</h2>
+
+          <div class="cmg-copy cmg-copy--blue">
+            <p data-i18n="cmg.color.p1">White sand is the primary color and should be used on colored backgrounds and imagery for maximum contrast.</p>
+            <p data-i18n="cmg.color.p2">If the campaign mark is to be used on white or a lighter background, the secondary Ocean Blue color should be used to ensure legibility.</p>
+            <p data-i18n="cmg.color.p3">If one color is required, please use the approved one-color version.</p>
+          </div>
+
+          <p class="cmg-label cmg-label--green" data-i18n="cmg.color.primary">PRIMARY COLOR</p>
+          <div class="cmg-primarybar">
+            <img src="../img/pages/campaign-mark-guidelines/03-primary-color/cmg-03-primary-color-01.png" alt="Primary color mark 01" data-i18n-img="../img/pages/campaign-mark-guidelines/03-primary-color/cmg-03-primary-color-01.png"/>
+            <img src="../img/pages/campaign-mark-guidelines/03-primary-color/cmg-03-primary-color-02.png" alt="Primary color mark 02" data-i18n-img="../img/pages/campaign-mark-guidelines/03-primary-color/cmg-03-primary-color-02.png"/>
+            <img src="../img/pages/campaign-mark-guidelines/03-primary-color/cmg-03-primary-color-03.png" alt="Primary color mark 03" data-i18n-img="../img/pages/campaign-mark-guidelines/03-primary-color/cmg-03-primary-color-03.png"/>
+          </div>
+
+          <p class="cmg-label cmg-label--green cmg-label--spaced" data-i18n="cmg.color.secondary">SECONDARY COLOR</p>
+          <div class="cmg-row-3">
+            <img src="../img/pages/campaign-mark-guidelines/03-primary-color/cmg-03-primary-color-04.png" alt="Secondary color mark 01" data-i18n-img="../img/pages/campaign-mark-guidelines/03-primary-color/cmg-03-primary-color-04.png"/>
+            <img src="../img/pages/campaign-mark-guidelines/03-primary-color/cmg-03-primary-color-05.png" alt="Secondary color mark 02" data-i18n-img="../img/pages/campaign-mark-guidelines/03-primary-color/cmg-03-primary-color-05.png"/>
+            <img src="../img/pages/campaign-mark-guidelines/03-primary-color/cmg-03-primary-color-06.png" alt="Secondary color mark 03" data-i18n-img="../img/pages/campaign-mark-guidelines/03-primary-color/cmg-03-primary-color-06.png"/>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- INCORRECT USAGE (pink) -->
+      <section class="section section--pink cmg" id="cmg-incorrect">
+        <div class="stage cmg-stage cmg-stage--iu">
+
+          <h2 class="cmg-title cmg-title--light" data-i18n="cmg.incorrect.title">INCORRECT<br/>USAGE</h2>
+
+          <div class="cmg-copy cmg-copy--light">
+            <p data-i18n="cmg.incorrect.p1">It is important that the campaign mark is consistently represented. The mark should not be altered in any way.</p>
+          </div>
+
+          <div class="cmg-iu-grid" aria-label="Incorrect usage examples">
+            <figure class="cmg-iu-item">
+              <img class="cmg-iu-img cmg-iu-img--01" src="../img/pages/campaign-mark-guidelines/04-incorrect-usage/cmg-04-incorrect-usage-01.png" alt="Do not skew" data-i18n-img="../img/pages/campaign-mark-guidelines/04-incorrect-usage/cmg-04-incorrect-usage-01.png"/>
+              <figcaption class="cmg-iu-caption" data-i18n="cmg.iu1"><span class="cmg-iu-bold">DO NOT</span> SKEW THE LOGO</figcaption>
+            </figure>
+            <figure class="cmg-iu-item">
+              <img class="cmg-iu-img cmg-iu-img--02" src="../img/pages/campaign-mark-guidelines/04-incorrect-usage/cmg-04-incorrect-usage-02.png" alt="Do not rotate" data-i18n-img="../img/pages/campaign-mark-guidelines/04-incorrect-usage/cmg-04-incorrect-usage-02.png"/>
+              <figcaption class="cmg-iu-caption" data-i18n="cmg.iu2"><span class="cmg-iu-bold">DO NOT</span> ROTATE THE LOGO</figcaption>
+            </figure>
+            <figure class="cmg-iu-item">
+              <img class="cmg-iu-img cmg-iu-img--03" src="../img/pages/campaign-mark-guidelines/04-incorrect-usage/cmg-04-incorrect-usage-03.png" alt="Do not outline" data-i18n-img="../img/pages/campaign-mark-guidelines/04-incorrect-usage/cmg-04-incorrect-usage-03.png"/>
+              <figcaption class="cmg-iu-caption" data-i18n="cmg.iu3"><span class="cmg-iu-bold">DO NOT</span> OUTLINE THE LOGO</figcaption>
+            </figure>
+            <figure class="cmg-iu-item">
+              <img class="cmg-iu-img cmg-iu-img--04" src="../img/pages/campaign-mark-guidelines/04-incorrect-usage/cmg-04-incorrect-usage-04.png" alt="Do not modify placement" data-i18n-img="../img/pages/campaign-mark-guidelines/04-incorrect-usage/cmg-04-incorrect-usage-04.png"/>
+              <figcaption class="cmg-iu-caption" data-i18n="cmg.iu4"><span class="cmg-iu-bold">DO NOT</span> MODIFY THE PLACEMENT OF LOGO PARTS</figcaption>
+            </figure>
+            <figure class="cmg-iu-item">
+              <img class="cmg-iu-img cmg-iu-img--05" src="../img/pages/campaign-mark-guidelines/04-incorrect-usage/cmg-04-incorrect-usage-05.png" alt="Do not apply harsh shadow" data-i18n-img="../img/pages/campaign-mark-guidelines/04-incorrect-usage/cmg-04-incorrect-usage-05.png"/>
+              <figcaption class="cmg-iu-caption" data-i18n="cmg.iu5"><span class="cmg-iu-bold">DO NOT</span> APPLY A HARSH DROP SHADOW TO THE LOGO</figcaption>
+            </figure>
+            <figure class="cmg-iu-item">
+              <img class="cmg-iu-img cmg-iu-img--06" src="../img/pages/campaign-mark-guidelines/04-incorrect-usage/cmg-04-incorrect-usage-06.png" alt="Do not remove parts" data-i18n-img="../img/pages/campaign-mark-guidelines/04-incorrect-usage/cmg-04-incorrect-usage-06.png"/>
+              <figcaption class="cmg-iu-caption" data-i18n="cmg.iu6"><span class="cmg-iu-bold">DO NOT</span> REMOVE PARTS OF THE LOGO</figcaption>
+            </figure>
+            <figure class="cmg-iu-item">
+              <img class="cmg-iu-img cmg-iu-img--07" src="../img/pages/campaign-mark-guidelines/04-incorrect-usage/cmg-04-incorrect-usage-07.png" alt="Do not apply unapproved color" data-i18n-img="../img/pages/campaign-mark-guidelines/04-incorrect-usage/cmg-04-incorrect-usage-07.png"/>
+              <figcaption class="cmg-iu-caption" data-i18n="cmg.iu7"><span class="cmg-iu-bold">DO NOT</span> APPLY AN UNAPPROVED COLOR TO THE LOGO</figcaption>
+            </figure>
+            <figure class="cmg-iu-item">
+              <img class="cmg-iu-img cmg-iu-img--08" src="../img/pages/campaign-mark-guidelines/04-incorrect-usage/cmg-04-incorrect-usage-08.png" alt="Do not apply gradient" data-i18n-img="../img/pages/campaign-mark-guidelines/04-incorrect-usage/cmg-04-incorrect-usage-08.png"/>
+              <figcaption class="cmg-iu-caption" data-i18n="cmg.iu8"><span class="cmg-iu-bold">DO NOT</span> APPLY A GRADIENT TO THE LOGO</figcaption>
+            </figure>
+            <figure class="cmg-iu-item">
+              <img class="cmg-iu-img cmg-iu-img--09" src="../img/pages/campaign-mark-guidelines/04-incorrect-usage/cmg-04-incorrect-usage-09.png" alt="Do not resize parts" data-i18n-img="../img/pages/campaign-mark-guidelines/04-incorrect-usage/cmg-04-incorrect-usage-09.png"/>
+              <figcaption class="cmg-iu-caption" data-i18n="cmg.iu9"><span class="cmg-iu-bold">DO NOT</span> RESIZE PARTS OF THE LOGO</figcaption>
+            </figure>
+          </div>
+
+        </div>
+      </section>
+
+    </div><!-- /con-campaign-mark -->
+
+
+    <!-- ╔══════════════════════════════════════════════════════════════╗
+         ║  SECTION 5 — GRAPHIC ASSETS                                ║
+         ╚══════════════════════════════════════════════════════════════╝ -->
+    <div class="con-section-wrap" id="con-graphic-assets">
+
+      <section class="section section--cream ga" id="graphic-assets">
+        <div class="stage ga-stage ga-stage--long">
+
+          <h1 class="ga-title ga-title--green" data-i18n="ga.title">GRAPHIC<br/>ASSETS</h1>
+
+          <!-- 05.1 LOCATION MAP -->
+          <div class="ga-block" id="ga-05-1">
+            <h2 class="ga-h2" data-i18n="ga.map.title">LOCATION MAP</h2>
+            <div class="ga-copy">
+              <p data-i18n="ga.map.p1">The VISIT FLORIDA brand includes two approved color variations of the primary Florida map: Bougainvillea and White Sand.</p>
+              <br>
+              <p data-i18n="ga.map.p2">Both versions are designed for flexible use across multiple mediums, including video, social, web and digital layouts. The inverted Florida map can be used on top of both color and imagery provided there is sufficient contrast for legibility. The map can be used at both large and small scales with a recommended smallest scale of 50x50px.</p>
+              <br>
+              <p data-i18n="ga.map.p3">When using the brand map, always ensure that Lake Okeechobee and the Florida Keys are included, as these are essential geographic identifiers that maintain visual consistency.</p>
+              <br>
+              <p data-i18n="ga.map.p4">Use only approved versions and avoid altering the map's proportions, features, or color treatments outside of the brand colors and imagery.</p>
+            </div>
+
+            <div class="ga-grid ga-grid--2 ga-grid--maps">
+              <div class="ga-cell">
+                <p class="ga-imglabel" data-i18n="ga.map.primary">PRIMARY FLORIDA MAP</p>
+                <img class="ga-img ga-img--flat ga-img--01" src="../img/pages/graphic-assets/01-location-map/ga-location-map-primary-01.png" alt="Primary Florida map"/>
+              </div>
+              <div class="ga-cell">
+                <div class="ga-inverted">
+                  <p class="ga-imglabel ga-imglabel--inverted" data-i18n="ga.map.inverted">INVERTED FLORIDA MAP</p>
+                  <img class="ga-img ga-img--flat ga-img--02" src="../img/pages/graphic-assets/01-location-map/ga-location-map-inverted-01.png" alt="Inverted Florida map"/>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 05.2 REGIONAL LOCATION MAP -->
+          <div class="ga-block" id="ga-05-2">
+            <h2 class="ga-h2" data-i18n="ga.regional.title">REGIONAL LOCATION MAP</h2>
+            <div class="ga-copy">
+              <p data-i18n="ga.regional.p1">The VISIT FLORIDA brand includes two regional location map styles: single-color and multicolor.</p>
+              <p data-i18n="ga.regional.p2">Both versions are available to support a variety of use cases.</p>
+              <br>
+              <p data-i18n="ga.regional.single"><strong>SINGLE-COLOR REGIONAL MAP</strong><br/>
+                Designed for clarity and versatility, the single color regional map is best suited for web applications, particularly where interactive or functional use is required (e.g., hover states).</p>
+              <br>
+              <p data-i18n="ga.regional.multi"><strong>MULTI-COLOR REGIONAL MAP</strong><br/>
+                This version offers a more illustrative and visually engaging representation of Florida's regions. It is appropriate for use across web, social media, and print, where a more expressive or branded aesthetic is desired.</p>
+              <br>
+              <p data-i18n="ga.regional.p3">Use maps consistently and according to context, ensuring they align with the intended purpose and overall visual tone of the campaign or platform.</p>
+            </div>
+
+            <div class="ga-grid ga-grid--2 ga-grid--regional">
+              <div class="ga-cell">
+                <p class="ga-imglabel" data-i18n="ga.regional.single.label">SINGLE-COLOR REGIONAL MAP</p>
+                <img class="ga-img ga-img--flat ga-img--03" src="../img/pages/graphic-assets/02-regional-location-map/ga-regional-map-single-color-01.png" alt="Single-color regional map"/>
+              </div>
+              <div class="ga-cell">
+                <p class="ga-imglabel" data-i18n="ga.regional.multi.label">MULTI-COLOR REGIONAL MAP</p>
+                <img class="ga-img ga-img--flat ga-img--04" src="../img/pages/graphic-assets/02-regional-location-map/ga-regional-map-multi-color-01.png" alt="Multi-color regional map"/>
+              </div>
+            </div>
+          </div>
+
+          <!-- 05.3 MULTI-COLOR REGIONAL MAP COLOR PALETTE -->
+          <div class="ga-block" id="ga-05-3">
+            <h2 class="ga-h2" data-i18n="ga.palette.title">MULTI-COLOR REGIONAL MAP COLOR PALETTE</h2>
+            <div class="ga-copy">
+              <p data-i18n="ga.palette.p1">The VISIT FLORIDA multi-color regional map incorporates a range of approved supplemental colors designed to complement the primary brand palette within this <span class="ga-emphasis">specific graphic.</span></p>
+              <br>
+              <p data-i18n="ga.palette.p2">These tones are lighter variations derived from the core brand colors and are used to create visual balance within these combined colors.</p>
+              <br>
+              <p data-i18n="ga.palette.p3">These secondary colors are exclusive to the regional map and <span class="ga-emphasis">should not be used elsewhere.</span></p>
+              <p data-i18n="ga.palette.p4">All other design applications must rely strictly on the primary brand color palette.</p>
+            </div>
+
+            <div class="ga-palette ga-palette--overlay">
+              <div class="ga-palette__img ga-palette__img--overlay">
+                <p class="ga-imglabel ga-imglabel--tight ga-palette__overlay-label" data-i18n="ga.palette.label">SUPPLEMENTARY COLORS</p>
+                <img class="ga-img ga-img--flat ga-img--05" src="../img/pages/graphic-assets/03-multi-color-regional-map-color-palette/ga-regional-map-multi-color-palette-01.png" alt="Multi-color regional map color palette"/>
+              </div>
+            </div>
+          </div>
+
+          <!-- 05.4 LOCATION MAP CONTINUED -->
+          <div class="ga-block" id="ga-05-4">
+            <h2 class="ga-h2 ga-h2--centered" data-i18n="ga.continued.title">LOCATION MAP CONTINUED</h2>
+            <div class="ga-copy ga-copy--centered">
+              <p data-i18n="ga.continued.p1">When using the Florida map, there may be occasions when specific regions or cities need to be highlighted or called out. The Flagua brand color should be used to emphasize regions and the Solar Flare brand color should be used to mark city locations with pins.</p>
+              <p data-i18n="ga.continued.p2">For city callouts, the connecting stroke between the label and the corresponding pin should be reversed out for maximum legibility.</p>
+              <p data-i18n="ga.continued.p3">This approach ensures the stroke remains clearly visible against both the map and any background elements. To maintain visual consistency and brand integrity, no other colors should be used for map highlights or annotations.</p>
+            </div>
+
+            <div class="ga-grid ga-grid--2 ga-grid--callouts">
+              <div class="ga-cell">
+                <p class="ga-imglabel" data-i18n="ga.continued.highlight">REGIONAL MAP HIGHLIGHT</p>
+                <img class="ga-img ga-img--flat ga-img--06" src="../img/pages/graphic-assets/04-location-map-continued/ga-map-highlight-region-01.png" alt="Regional map highlight"/>
+              </div>
+              <div class="ga-cell">
+                <p class="ga-imglabel" data-i18n="ga.continued.callout">CITY LOCATION CALLOUT</p>
+                <img class="ga-img ga-img--flat ga-img--07" src="../img/pages/graphic-assets/04-location-map-continued/ga-map-city-callout-01.png" alt="City location callout"/>
+              </div>
+            </div>
+          </div>
+
+          <!-- 05.5 LOCATION PIN -->
+          <div class="ga-block" id="ga-05-5">
+            <h2 class="ga-h2 ga-h2--centered" data-i18n="ga.pin.title">LOCATION PIN</h2>
+            <div class="ga-copy ga-copy--centered">
+              <p data-i18n="ga.pin.p1">The Location Pin is a supporting visual element designed to identify specific <span class="ga-emphasis">destinations</span> or <span class="ga-emphasis">cities</span> in Florida.</p>
+              <p data-i18n="ga.pin.p2">The pin must always be <span class="ga-emphasis">placed in context</span>, either over a map or image, to reinforce geographic relevance. It should never be used as a standalone graphic or decorative icon.</p>
+              <p data-i18n="ga.pin.p3">The pin is not intended to function as a primary graphic or logo. It should <span class="ga-emphasis">never be enlarged</span> disproportionately, used in isolation, or treated as a hero element.</p>
+              <p data-i18n="ga.pin.p4">The location pin must appear in <span class="ga-emphasis">Solar Flare</span>, the primary brand color. When legibility requires, <span class="ga-emphasis">White Sand</span> may be used as an alternate. The minimum size of the pin can be used at 8x12px.</p>
+              <p data-i18n="ga.pin.p5">The pin should complement the design without distracting from primary messaging or photography. It should feel <span class="ga-emphasis">integrated, understated,</span> and <span class="ga-emphasis">purposeful.</span></p>
+            </div>
+
+            <div class="ga-grid ga-grid--2 ga-grid--pin">
+              <div class="ga-cell">
+                <img class="ga-img ga-img--flat ga-img--08 ga-pin-img--left" src="../img/pages/graphic-assets/05-location-pin/ga-location-pin-example-01.png" alt="Location pin example 01"/>
+                <p class="ga-imglabel ga-pin-caption ga-pin-caption--left" data-i18n="ga.pin.caption1">Spacing of the location and pin on image should equal width of the exterior border.</p>
+              </div>
+              <div class="ga-cell">
+                <img class="ga-img ga-img--flat ga-img--09 ga-pin-img--right" src="../img/pages/graphic-assets/05-location-pin/ga-location-pin-example-02.png" alt="Location pin example 02"/>
+                <p class="ga-imglabel ga-pin-caption ga-pin-caption--right" data-i18n="ga.pin.caption2">Typography should be 75% of the height of the pin, centered horizontally with the pin.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="ga-ctas ga-ctas--single">
+            <a class="hub-btn hub-btn--green" href="https://visitflorida.box.com/s/44mtbmstokrigj76pxv90n0z8h3inoo5" target="_blank" rel="noopener" aria-label="Download graphic assets" data-i18n="ga.download" data-i18n-href="href.ga.download">DOWNLOAD GRAPHIC ASSETS</a>
+          </div>
+
+        </div>
+      </section>
+
+    </div><!-- /con-graphic-assets -->
+
+  </main>
+
+
+  <!-- ════════ FOOTER ════════ -->
+  <div aria-label="Site footer" class="footer-bar">
+    <div class="footer-bar__inner">Copyright 2025 VISIT FLORIDA&reg;</div>
+  </div>
+
+  <!-- ════════ SCROLL TO TOP ════════ -->
+  <button class="scroll-to-top" aria-label="Scroll to top" id="scrollToTop">
+    <img src="../img/up-arrow_1549453.svg" alt="Subir" class="scroll-to-top__icon" style="width:32px;height:32px;"/>
+  </button>
+
+  <script src="../js/i18n.js"></script>
+  <script src="../js/main.js"></script>
+
+  <script>
+  (function () {
+    /* ── References ── */
+    var stickybar    = document.getElementById('conStickybar');
+    var pillsWrap    = document.getElementById('conStickyPills');
+    var titleSec     = document.getElementById('con-title');
+    var quickNav     = document.getElementById('conQuickNav');
+    var stickyPills  = pillsWrap.querySelectorAll('.con-sticky__pill');
+    var quickPills   = quickNav.querySelectorAll('a.hub-btn');
+    var navToggle    = document.getElementById('conNavToggle');
+    var navDropdown  = document.getElementById('conNavDropdown');
+    var dropdownPills = navDropdown.querySelectorAll('.con-sticky__pill');
+
+    var sectionIds  = [
+      'con-brand-guidelines',
+      'con-vf-logo',
+      'con-partner-logo',
+      'con-campaign-mark',
+      'con-graphic-assets'
+    ];
+    var sections = sectionIds.map(function (id) { return document.getElementById(id); });
+
+    /* ── Helper: fixed-header offset ── */
+    function headerOffset() {
+      var hdr = document.getElementById('header');
+      return hdr ? hdr.offsetHeight : 0;
+    }
+
+    function stickyHeight() {
+      return stickybar.offsetHeight;
+    }
+
+    /* ── Smooth scroll for pills ── */
+    function scrollToSection(e) {
+      e.preventDefault();
+      var href = e.currentTarget.getAttribute('href');
+      var target = document.querySelector(href);
+      if (!target) return;
+      var offset = headerOffset() + 60; // extra margin
+      var top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+      window.scrollTo({ top: top, behavior: 'smooth' });
+    }
+
+    quickPills.forEach(function (pill) { pill.addEventListener('click', scrollToSection); });
+    stickyPills.forEach(function (pill) { pill.addEventListener('click', scrollToSection); });
+    dropdownPills.forEach(function (pill) {
+      pill.addEventListener('click', function (e) {
+        scrollToSection(e);
+        navDropdown.classList.remove('con-stickybar__dropdown--open');
+        navToggle.classList.remove('con-stickybar__toggle--open');
+      });
+    });
+
+    /* ── Dropdown toggle (mobile) ── */
+    navToggle.addEventListener('click', function () {
+      navDropdown.classList.toggle('con-stickybar__dropdown--open');
+      navToggle.classList.toggle('con-stickybar__toggle--open');
+    });
+    document.addEventListener('click', function (e) {
+      if (!navToggle.contains(e.target) && !navDropdown.contains(e.target)) {
+        navDropdown.classList.remove('con-stickybar__dropdown--open');
+        navToggle.classList.remove('con-stickybar__toggle--open');
+      }
+    });
+
+    /* ── Show / hide pills when scrolled past quick nav ── */
+    function showNav() {
+      pillsWrap.classList.add('con-stickybar__pills--visible');
+      navToggle.classList.add('con-stickybar__toggle--ready');
+    }
+    function hideNav() {
+      pillsWrap.classList.remove('con-stickybar__pills--visible');
+      navToggle.classList.remove('con-stickybar__toggle--ready');
+      navDropdown.classList.remove('con-stickybar__dropdown--open');
+      navToggle.classList.remove('con-stickybar__toggle--open');
+    }
+
+    var quickNavObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          hideNav();
+        } else {
+          var rect = quickNav.getBoundingClientRect();
+          if (rect.bottom < 0) {
+            showNav();
+          } else {
+            hideNav();
+          }
+        }
+      });
+    }, { threshold: 0 });
+
+    quickNavObserver.observe(quickNav);
+
+    /* ── Active section detection ── */
+    var currentActive = -1;
+
+    function setActive(index) {
+      if (index === currentActive) return;
+      currentActive = index;
+      stickyPills.forEach(function (pill, i) {
+        pill.classList.toggle('con-sticky__pill--active', i === index);
+      });
+      dropdownPills.forEach(function (pill, i) {
+        pill.classList.toggle('con-sticky__pill--active', i === index);
+      });
+    }
+
+    var sectionObserver = new IntersectionObserver(function (entries) {
+      // Build a map of which sections are intersecting
+      entries.forEach(function (entry) {
+        var idx = sectionIds.indexOf(entry.target.id);
+        if (idx === -1) return;
+        entry.target._conVisible = entry.isIntersecting;
+      });
+
+      // Find the topmost visible section
+      for (var i = 0; i < sections.length; i++) {
+        if (sections[i]._conVisible) {
+          setActive(i);
+          return;
+        }
+      }
+    }, {
+      rootMargin: '-' + (headerOffset() + 80) + 'px 0px -40% 0px',
+      threshold: 0
+    });
+
+    sections.forEach(function (sec) {
+      if (sec) sectionObserver.observe(sec);
+    });
+
+    /* ── Fallback: update on scroll for edge-cases ── */
+    var ticking = false;
+    window.addEventListener('scroll', function () {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(function () {
+        ticking = false;
+        var offset = headerOffset() + 100;
+        for (var i = sections.length - 1; i >= 0; i--) {
+          if (sections[i] && sections[i].getBoundingClientRect().top <= offset) {
+            setActive(i);
+            break;
+          }
+        }
+
+        // Also update pills visibility on scroll (backup)
+        var qRect = quickNav.getBoundingClientRect();
+        if (qRect.bottom < 0) {
+          showNav();
+        } else {
+          hideNav();
+        }
+      });
+    }, { passive: true });
+
+  })();
+  </script>
+
+</body>
+</html>
