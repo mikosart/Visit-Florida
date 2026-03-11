@@ -969,6 +969,16 @@ html[lang="es"] .h2--image-considerations{
 .copybank-lines__col p:empty{
   display: none;
 }
+:lang(es) .copybank-lines,
+:lang(pt) .copybank-lines{
+  grid-template-columns: 1fr;
+  text-align: center;
+  gap: 6px;
+}
+:lang(es) .copybank-lines__col:not(:has(p:not(:empty))),
+:lang(pt) .copybank-lines__col:not(:has(p:not(:empty))){
+  display: none;
+}
 
 .copybank-cta{
   margin: 103px auto 0;
@@ -988,7 +998,7 @@ html[lang="es"] .h2--image-considerations{
   .copybank-lines{
     grid-template-columns: 1fr;
     text-align: center;
-    gap: 18px;
+    gap: 6px;
   }
 }
 

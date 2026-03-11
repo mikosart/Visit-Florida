@@ -228,9 +228,9 @@ var translations = {
     pt: 'Agora seu público pode curtir "Viva Mais Floridias" antes mesmo de arrumar as malas!'
   },
   'index.video.btn': {
-    en: 'DOWNLOAD VIDEOS AND B-ROLL',
-    es: 'DESCARGAR VIDEOS<br class="mobile-br"/> Y MATERIAL DE APOYO',
-    pt: 'BAIXE VÍDEOS<br class="mobile-br"/> E IMAGENS DE APOIO'
+    en: 'EXPLORE VIDEOS',
+    es: 'EXPLORAR VIDEOS',
+    pt: 'EXPLORAR VÍDEOS'
   },
   'index.copy.title': {
     en: 'COPY BANK',
