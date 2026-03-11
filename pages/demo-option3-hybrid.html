@@ -46,7 +46,7 @@
   }
 
   .container {
-    max-width: 1100px;
+    max-width: 900px;
     margin: 0 auto;
     padding: 40px 24px 60px;
   }
@@ -161,15 +161,33 @@
     margin-left: 4px;
   }
 
-  .video-main {
-    margin-bottom: 20px;
+  .demo-pair {
+    margin-bottom: 48px;
   }
 
-  .video-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    margin-bottom: 40px;
+  .demo-pair__label {
+    font-size: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 12px;
+    padding: 8px 16px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 8px;
+    display: inline-block;
+  }
+
+  .demo-pair__desc {
+    font-size: 14px;
+    opacity: 0.85;
+    margin-bottom: 16px;
+    line-height: 1.5;
+  }
+
+  .divider {
+    border: none;
+    border-top: 1px solid rgba(255,255,255,0.2);
+    margin: 40px 0;
   }
 
   .info-box {
@@ -193,10 +211,13 @@
     margin-bottom: 8px;
   }
 
-  .info-box ul {
-    margin: 0 0 16px 20px;
+  .info-box p, .info-box li {
     font-size: 14px;
     line-height: 1.7;
+  }
+
+  .info-box ul {
+    margin: 0 0 16px 20px;
   }
 
   .info-box ul:last-child { margin-bottom: 0; }
@@ -218,8 +239,26 @@
     vertical-align: middle;
   }
 
+  .note-box {
+    background: rgba(255,255,255,0.08);
+    border-left: 4px solid rgba(255,255,255,0.4);
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin-top: 20px;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .note-box strong {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.8;
+  }
+
   @media (max-width: 600px) {
-    .video-grid { grid-template-columns: 1fr; }
     h1 { font-size: 24px; }
     .container { padding: 24px 16px 40px; }
     .demo-header { padding: 12px 16px; }
@@ -240,38 +279,46 @@
   <span class="option-badge">Option 3 of 3</span>
   <h1>Thumbnail with Lazy-Load <span class="best-pick">Recommended</span></h1>
   <p class="subtitle">
-    The page shows thumbnail images with a play button overlay &mdash; just like Option 2.
-    But instead of opening a separate overlay, clicking a thumbnail replaces it in-place with
-    the YouTube player, which starts playing immediately. The video stays right where the
-    thumbnail was.
+    The page shows a thumbnail image with a play button overlay. When a visitor clicks it,
+    the image is replaced in-place by the YouTube player, which starts playing immediately.
+    No popup, no overlay &mdash; the video simply appears right where the thumbnail was.
   </p>
 
   <p class="section-label">Floridays in Motion</p>
   <p class="section-sublabel">Videos that bring Floridays to life &mdash; click any thumbnail to play</p>
 
-  <div class="video-slot video-main" onclick="lazyLoad(this)">
-    <img src="https://img.youtube.com/vi/I1OJm89bq-4/maxresdefault.jpg" alt="Live More Floridays video thumbnail">
-    <span class="play-btn"></span>
-  </div>
-
-  <div class="video-grid">
+  <!-- EXAMPLE A: Default YouTube Thumbnail -->
+  <div class="demo-pair">
+    <div class="demo-pair__label">A) Default YouTube Thumbnail</div>
+    <p class="demo-pair__desc">
+      This uses the thumbnail that is set on the YouTube video. If the video owner changes the thumbnail on YouTube, it automatically updates here too.
+    </p>
     <div class="video-slot" onclick="lazyLoad(this)">
-      <img src="https://img.youtube.com/vi/I1OJm89bq-4/maxresdefault.jpg" alt="Floridays video thumbnail">
+      <img src="https://img.youtube.com/vi/I1OJm89bq-4/maxresdefault.jpg" alt="Live More Floridays video thumbnail">
       <span class="play-btn"></span>
     </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- EXAMPLE B: Custom Thumbnail (current image) -->
+  <div class="demo-pair">
+    <div class="demo-pair__label">B) Custom Thumbnail (your current image)</div>
+    <p class="demo-pair__desc">
+      This uses your own custom image as the thumbnail. You have full control over the design &mdash; it won't change even if the YouTube thumbnail changes. This is ideal for branded images with logos or text in different languages.
+    </p>
     <div class="video-slot" onclick="lazyLoad(this)">
-      <img src="https://img.youtube.com/vi/I1OJm89bq-4/maxresdefault.jpg" alt="Floridays video thumbnail">
+      <img src="../img/section5/main-floridays-in-motion-01.png" alt="Live More Floridays video thumbnail">
       <span class="play-btn"></span>
     </div>
   </div>
 
   <div class="info-box">
     <h2>What This Option Does</h2>
-    <p style="font-size:14px; line-height:1.6; margin-bottom:16px;">
-      This is a "best of both worlds" approach. The page loads quickly with lightweight thumbnail
-      images. When a visitor clicks a thumbnail, it is seamlessly swapped with the actual YouTube
-      player, which begins playing automatically right where the image was. No overlay, no popup &mdash;
-      the video simply appears in the same spot.
+    <p style="margin-bottom:16px;">
+      This is a "best of both worlds" approach. The page loads quickly with a lightweight thumbnail
+      image. When a visitor clicks it, it is seamlessly swapped with the actual YouTube
+      player, which begins playing automatically right where the image was. No overlay, no popup.
     </p>
 
     <h3 class="pros">Pros</h3>
@@ -287,15 +334,20 @@
     <ul>
       <li>Requires one click before video plays (same as Option 2)</li>
       <li>Once replaced with the iframe, the thumbnail is gone until the page is refreshed</li>
-      <li>Slightly more code than a plain embed, but simpler than the lightbox modal</li>
     </ul>
+
+    <div class="note-box">
+      <strong>About the thumbnail</strong>
+      You can choose either option:<br>
+      <b>A) YouTube default:</b> The thumbnail updates automatically if it's changed on YouTube. No maintenance needed, but you can't control the design.<br>
+      <b>B) Custom image:</b> You use your own branded image (like the current one). You have full design control and can have different images per language (EN/ES/PT). It won't change unless you update it manually.
+    </div>
   </div>
 
 </div>
 
 <script>
   function lazyLoad(slot) {
-    // Only activate once
     if (slot.classList.contains('is-playing')) return;
 
     slot.classList.add('is-playing');
@@ -306,7 +358,6 @@
     iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
     iframe.allowFullscreen = true;
 
-    // Remove thumbnail and play button, insert iframe
     slot.innerHTML = '';
     slot.appendChild(iframe);
     slot.style.cursor = 'default';
