@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3:*)",
+      "Bash(py --version)",
+      "Bash(node --version:*)",
+      "Bash(node -e:*)",
+      "Bash(npm install:*)",
+      "Bash(start \"\" \"C:\\\\Users\\\\Mikof\\\\Desktop\\\\Visitflorida 2da Version\\\\index.html\")",
+      "WebFetch(domain:www.linkedin.com)",
+      "WebFetch(domain:careers.wbd.com)",
+      "WebSearch",
+      "WebFetch(domain:www.botboxp.com)"
+    ]
+  }
+}
