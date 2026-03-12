@@ -272,6 +272,24 @@ var translations = {
     es: 'EXPLORAR VIDEOS',
     pt: 'EXPLORAR VÍDEOS'
   },
+
+  /* Video IDs per language — replace ES/PT when assets arrive */
+  'index.video.id1': {
+    en: 'I1OJm89bq-4',
+    es: 'I1OJm89bq-4',
+    pt: 'I1OJm89bq-4'
+  },
+  'index.video.id2': {
+    en: 'MsQphwQ1rpE',
+    es: 'MsQphwQ1rpE',
+    pt: 'MsQphwQ1rpE'
+  },
+  'index.video.id3': {
+    en: 'rYglEncZnZI',
+    es: 'rYglEncZnZI',
+    pt: 'rYglEncZnZI'
+  },
+
   'index.copy.title': {
     en: 'COPY BANK',
     es: 'BANCO DE TEXTOS',
@@ -1464,6 +1482,19 @@ var translations = {
       var key = el.getAttribute('data-i18n-href');
       if (translations[key] && translations[key][lang] != null) {
         el.setAttribute('href', translations[key][lang]);
+      }
+    });
+    // Swap localised video IDs (data-i18n-video holds translation key)
+    document.querySelectorAll('[data-i18n-video]').forEach(function(el) {
+      var key = el.getAttribute('data-i18n-video');
+      if (translations[key] && translations[key][lang] != null) {
+        el.setAttribute('data-video', translations[key][lang]);
+        // Reset to thumbnail if video was already playing
+        if (el.classList.contains('is-playing')) {
+          el.classList.remove('is-playing');
+          var imgSrc = el.querySelector('img') ? null : el.getAttribute('data-thumb');
+          // Rebuild thumbnail from original img tag (page refresh handles this)
+        }
       }
     });
     localStorage.setItem('vf-lang', lang);

@@ -159,16 +159,25 @@
   </ul>
   <p class="video-assets__closing" data-i18n="index.video.closing">Now your audience can Live More Floridays even before they pack their bags!</p>
 </div>
-<div aria-label="Featured video thumbnail" class="video-thumb video-thumb--main">
-<img alt="Live More Floridays video thumbnail" decoding="async" loading="lazy" src="img/section5/main-floridays-in-motion-01.png">
-</img></div>
-<div aria-label="Additional video thumbnails" class="video-thumb-grid">
+<div aria-label="Featured video" class="video-thumb video-thumb--main">
+<div class="video-slot" data-video="I1OJm89bq-4" data-i18n-video="index.video.id1" onclick="lazyLoadVideo(this)">
+  <img alt="Live More Floridays video thumbnail — Panama City Beach" src="img/section5/main-floridays-in-motion-01.png"/>
+  <span class="play-btn"></span>
+</div>
+</div>
+<div aria-label="Additional videos" class="video-thumb-grid">
 <figure class="video-thumb">
-<img alt="Visit Florida video thumbnail — Floridays" decoding="async" loading="lazy" src="img/section5/main-floridays-in-motion-02.png">
-</img></figure>
+  <div class="video-slot" data-video="MsQphwQ1rpE" data-i18n-video="index.video.id2" onclick="lazyLoadVideo(this)">
+    <img alt="Visit Florida video thumbnail — Floridays" src="img/section5/main-floridays-in-motion-02.png"/>
+    <span class="play-btn"></span>
+  </div>
+</figure>
 <figure class="video-thumb">
-<img alt="Visit Florida video thumbnail — Crystal River" decoding="async" loading="lazy" src="img/section5/main-floridays-in-motion-03.png">
-</img></figure>
+  <div class="video-slot" data-video="rYglEncZnZI" data-i18n-video="index.video.id3" onclick="lazyLoadVideo(this)">
+    <img alt="Visit Florida video thumbnail — Crystal River" src="img/section5/main-floridays-in-motion-03.png"/>
+    <span class="play-btn"></span>
+  </div>
+</figure>
 </div>
 <div class="cta cta--center">
 <a class="btn-download btn-download--green" href="https://www.youtube.com/playlist?list=PLBDWU8gsNXlI62wjdXUkOrs420ATLiEQm" target="_blank" rel="noopener" data-i18n="index.video.btn">EXPLORE VIDEOS</a>
@@ -301,6 +310,20 @@
 <button class="scroll-to-top" aria-label="Scroll to top" id="scrollToTop">
   <img src="img/up-arrow_1549453.svg" alt="Subir" class="scroll-to-top__icon" style="width:32px;height:32px;"/>
 </button>
+<script>
+function lazyLoadVideo(slot){
+  if(slot.classList.contains('is-playing')) return;
+  slot.classList.add('is-playing');
+  var videoId = slot.getAttribute('data-video');
+  var iframe = document.createElement('iframe');
+  iframe.src = 'https://www.youtube.com/embed/' + videoId + '?autoplay=1';
+  iframe.title = 'Live More Floridays';
+  iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+  iframe.allowFullscreen = true;
+  slot.innerHTML = '';
+  slot.appendChild(iframe);
+}
+</script>
 <script src="js/i18n.js"></script>
 <script src="js/main.js"></script>
 <script>

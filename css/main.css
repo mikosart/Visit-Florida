@@ -882,6 +882,75 @@ html[lang="es"] .h2--image-considerations{
   display:block;
 }
 
+/* Video slot — lazy-load thumbnail → iframe */
+.video-slot{
+  position: relative;
+  overflow: hidden;
+  border-radius: 26px;
+  background: #000;
+  cursor: pointer;
+  aspect-ratio: 16 / 9;
+}
+.video-slot img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s, filter 0.3s;
+}
+.video-slot:hover img{
+  transform: scale(1.03);
+  filter: brightness(0.8);
+}
+.video-slot iframe{
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+.video-slot.is-playing{
+  cursor: default;
+}
+
+/* Play button overlay */
+.play-btn{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 96px;
+  height: 96px;
+  background: transparent;
+  border: 4px solid rgba(255,255,255,0.72);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  transition: transform 0.2s, border-color 0.2s;
+  filter: drop-shadow(0 3px 4px rgba(0,0,0,0.72));
+  z-index: 2;
+}
+.video-slot:hover .play-btn{
+  transform: translate(-50%, -50%) scale(1.08);
+}
+.play-btn::after{
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 19px 0 19px 33px;
+  border-color: transparent transparent transparent rgba(255,255,255,0.72);
+  margin-left: 6px;
+  filter: drop-shadow(2px 2px 3px rgba(0,0,0,0.72));
+}
+
+@media (max-width: 600px){
+  .play-btn{ width: 56px; height: 56px; }
+  .play-btn::after{ border-width: 10px 0 10px 20px; margin-left: 4px; }
+}
+
 .video-thumb--main{
   width: min(100%, 980px);
   margin-top: 65px;
@@ -1111,6 +1180,8 @@ html[lang="es"] .h2--image-considerations{
   aspect-ratio: 970 / 250;
   width: 100%;
   max-width: 800px;
+  overflow: hidden;
+  border-radius: 1px;
 }
 
 @media (max-width: 860px){
