@@ -101,6 +101,7 @@ body{
   z-index: 1000;
   /* Fixed header must keep Overview colors */
   background: rgba(225,31,143,0.98);
+  -webkit-backdrop-filter: blur(6px);
   backdrop-filter: blur(6px);
 }
 
@@ -1481,6 +1482,7 @@ html[lang="pt-BR"] .h2--itineraryhub{
 .page--brand-guidelines .site-header{
   box-shadow: none;
   background: var(--bg-brand-blue);
+  -webkit-backdrop-filter: none;
   backdrop-filter: none;
   border-bottom: none;
   position: 0px;
@@ -2672,6 +2674,7 @@ html[lang="es"] .page--brand-guidelines .bg-title{
 .page--vf-logo-lockup-guidelines .site-header{
   box-shadow: none;
   background: var(--white-sano);
+  -webkit-backdrop-filter: none;
   backdrop-filter: none;
 
 }
@@ -3342,6 +3345,7 @@ html[lang="es"] .page--brand-guidelines .bg-title{
 .page--campaign-mark-guidelines .site-header{
   box-shadow: none;
   background: #118FE9;
+  -webkit-backdrop-filter: none;
   backdrop-filter: none;
   border-bottom: 2px --ocean-blue;
 }
@@ -3606,6 +3610,7 @@ html[lang="es"] .page--brand-guidelines .bg-title{
 .page--graphic-assets .site-header{
   box-shadow: none;
   background: var(--white-sano);
+  -webkit-backdrop-filter: none;
   backdrop-filter: none;
   border-bottom: 1px solid rgb(255, 255, 255);
 }
@@ -4423,6 +4428,7 @@ html[lang="es"] .page--graphic-assets .ga-title{
 /* PAGE OVERRIDE — VF LOGO GUIDELINES (cream fixed header like toolkit) */
 .page--vf-logo-guidelines .site-header{
   background: var(--white-sano);
+  -webkit-backdrop-filter: none;
   backdrop-filter: none;
 }
 .page--vf-logo-guidelines .site-header__inner{
