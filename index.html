@@ -348,22 +348,13 @@ function lazyLoadVideo(slot){
       fig.style.display = '';
       fig.style.alignItems = '';
       fig.style.justifyContent = '';
-      if (fig.classList.contains('di-2')) {
-        // di-2: use zoom + flex centering
-        iframe.style.zoom = scale;
-        iframe.style.display = 'block';
-        fig.style.display = 'flex';
-        fig.style.alignItems = 'center';
-        fig.style.justifyContent = 'center';
-      } else {
-        // di-6: use transform scale + absolute centering
-        fig.style.position = 'relative';
-        iframe.style.position = 'absolute';
-        iframe.style.left = '50%';
-        iframe.style.top = '50%';
-        iframe.style.transformOrigin = 'center center';
-        iframe.style.transform = 'translate(-50%,-50%) scale(' + scale + ')';
-      }
+      // use transform scale + absolute centering for all banners (cross-browser: Safari, iOS, Firefox)
+      fig.style.position = 'relative';
+      iframe.style.position = 'absolute';
+      iframe.style.left = '50%';
+      iframe.style.top = '50%';
+      iframe.style.transformOrigin = 'center center';
+      iframe.style.transform = 'translate(-50%,-50%) scale(' + scale + ')';
     });
   }
   scaleBannerIframes();
