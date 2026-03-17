@@ -93,9 +93,9 @@ var translations = {
     pt: 'Para garantir uma presença de marca consistente e coesa, é importante que todos os materiais de marketing sigam as diretrizes de marca do VISIT FLORIDA para o uso e aplicação adequados de todos os recursos.'
   },
   'index.brand.btn1': {
-    en: 'BRAND<br/>GUIDELINES',
-    es: 'LINEAMIENTOS<br/>DE MARCA',
-    pt: 'DIRETRIZES<br/>DE MARCA'
+    en: 'BRAND GUIDELINES',
+    es: 'LINEAMIENTOS DE MARCA',
+    pt: 'DIRETRIZES DE MARCA'
   },
   'index.brand.btn2': {
     en: 'VISIT FLORIDA<br/>LOGO GUIDELINES',
@@ -133,12 +133,12 @@ var translations = {
     pt: 'DIRETRIZES DE MARCA'
   },
   'con.pill.vflogo': {
-    en: 'VF LOGO',
-    es: 'LOGOTIPO VF',
-    pt: 'LOGOTIPO VF'
+    en: 'VISIT FLORIDA LOGO',
+    es: 'LOGOTIPO VISIT FLORIDA',
+    pt: 'LOGOTIPO VISIT FLORIDA'
   },
   'con.pill.partner': {
-    en: 'PARTNER LOCKUP',
+    en: 'PARTNER LOGO LOCKUP',
     es: 'LOGOTIPO COMBINADO',
     pt: 'LOCKUP DO LOGOTIPO'
   },
