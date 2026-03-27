@@ -76,6 +76,37 @@
   });
   setHeaderHeightVar();
 
+  // Compact header on scroll
+  let lastScroll = 0;
+  const COMPACT_THRESHOLD = 80;
+  if (header && !document.getElementById('conStickybar')) {
+    // Pre-calculate both heights so we can switch instantly
+    let fullH, compactH;
+    function measureHeights() {
+      const wasCompact = header.classList.contains('site-header--compact');
+      header.classList.remove('site-header--compact');
+      fullH = header.getBoundingClientRect().height;
+      header.classList.add('site-header--compact');
+      compactH = header.getBoundingClientRect().height;
+      if (!wasCompact) header.classList.remove('site-header--compact');
+    }
+    measureHeights();
+    window.addEventListener('resize', measureHeights);
+
+    window.addEventListener('scroll', () => {
+      const isCompact = header.classList.contains('site-header--compact');
+      if (window.scrollY > COMPACT_THRESHOLD && !isCompact) {
+        header.classList.add('site-header--compact');
+        document.documentElement.style.setProperty('--fixed-header-h', compactH + 'px');
+        if(main) main.style.paddingTop = compactH + 'px';
+      } else if (window.scrollY <= COMPACT_THRESHOLD && isCompact) {
+        header.classList.remove('site-header--compact');
+        document.documentElement.style.setProperty('--fixed-header-h', fullH + 'px');
+        if(main) main.style.paddingTop = fullH + 'px';
+      }
+    });
+  }
+
   // Scroll to Top Button
   const scrollToTopBtn = document.getElementById('scrollToTop');
   if(scrollToTopBtn){

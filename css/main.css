@@ -104,6 +104,18 @@ body{
   -webkit-backdrop-filter: blur(6px);
   backdrop-filter: blur(6px);
 }
+.site-header--compact .site-header__inner{
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+.site-header--compact .vf-brand__logo img{
+  height: calc(var(--logo-h) * 0.55);
+  max-height: calc(var(--logo-h) * 0.55);
+}
+.site-header--compact .vf-flag img{
+  width: calc(var(--flag-sz) * 0.7);
+  height: calc(var(--flag-sz) * 0.7);
+}
 
 .site-header__inner{
   width: var(--stage-w);
@@ -2690,7 +2702,7 @@ html[lang="es"] .page--brand-guidelines .bg-title{
 
 
 .page--vf-logo-lockup-guidelines .vfllg-stage--s1{
-  padding: 30px 50px 92px;
+  padding: 96px 50px 92px;
 }
 
 .page--vf-logo-lockup-guidelines .vfllg-body--stack{

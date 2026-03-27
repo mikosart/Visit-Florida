@@ -12,6 +12,7 @@
       top: calc(var(--fixed-header-h, 80px) - 1px);
       left: 0;
       right: 0;
+      transition: top .3s ease;
       z-index: 900;
       background: #fff;
       box-shadow: 0 1px 4px rgba(0,0,0,.06);
@@ -213,6 +214,13 @@
       .con-quicknav .hub-btn {
         min-width: 200px;
         white-space: normal;
+      }
+    }
+    /* ── Laptop scale-down (Option 1 - test) ── */
+    @media (min-width: 769px) and (max-width: 1400px) {
+      .con-section-wrap,
+      .con-title-section {
+        zoom: 0.85;
       }
     }
   </style>
@@ -1217,15 +1225,37 @@ abcdefghijklmnopqrstuvwxyz
     });
 
     /* ── Show / hide pills when scrolled past quick nav ── */
+    /* ── Header auto-hide on scroll ── */
+    var headerEl = document.getElementById('header');
+    var headerHidden = false;
+    if (headerEl) {
+      headerEl.style.transition = 'transform .3s ease';
+    }
+
+    function hideHeader() {
+      if (headerHidden) return;
+      headerHidden = true;
+      headerEl.style.transform = 'translateY(-100%)';
+      stickybar.style.top = '0';
+    }
+    function showHeader() {
+      if (!headerHidden) return;
+      headerHidden = false;
+      headerEl.style.transform = '';
+      stickybar.style.top = '';
+    }
+
     function showNav() {
       pillsWrap.classList.add('con-stickybar__pills--visible');
       navToggle.classList.add('con-stickybar__toggle--ready');
+      hideHeader();
     }
     function hideNav() {
       pillsWrap.classList.remove('con-stickybar__pills--visible');
       navToggle.classList.remove('con-stickybar__toggle--ready');
       navDropdown.classList.remove('con-stickybar__dropdown--open');
       navToggle.classList.remove('con-stickybar__toggle--open');
+      showHeader();
     }
 
     var quickNavObserver = new IntersectionObserver(function (entries) {
