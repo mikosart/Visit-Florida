@@ -1151,14 +1151,14 @@ var translations = {
     pt: 'Se apenas uma cor for necessária, utilize a versão aprovada de uma cor.'
   },
   'cmg.color.primary': {
-    en: 'PRIMARY COLOR',
-    es: 'COLOR PRINCIPAL',
-    pt: 'COR PRINCIPAL'
+    en: 'MARK PRIMARY COLOR',
+    es: 'COLOR PRINCIPAL DE MARCA',
+    pt: 'COR PRINCIPAL DA MARCA'
   },
   'cmg.color.secondary': {
-    en: 'SECONDARY COLOR',
-    es: 'COLOR SECUNDARIO',
-    pt: 'COR SECUNDÁRIA'
+    en: 'MARK SECONDARY COLOR',
+    es: 'COLOR SECUNDARIO DE MARCA',
+    pt: 'COR SECUNDÁRIA DA MARCA'
   },
   'cmg.incorrect.title': {
     en: 'INCORRECT<br/>USAGE',
