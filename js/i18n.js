@@ -1415,7 +1415,12 @@ var translations = {
   },
   'href.index.copy': {
     en: 'https://docs.google.com/document/d/1YG2aIytKWi0QfavhGox-aRJOSBIOeEXvN4w6UsI-mXw/edit?tab=t.0',
-    es: '#',
+    es: 'https://docs.google.com/document/d/1AtjftAMcvQaqciKbwYUF_g-LYneoIzvzTfdsoB11ZSA/edit?tab=t.0',
+    pt: '#'
+  },
+  'href.index.itinerary': {
+    en: 'https://visitflorida.box.com/s/boyh55hsc3aaa9x44xarcyv5yuqq50vx',
+    es: 'https://visitflorida.box.com/s/rfn24tbtd6s57s3o5ff1jvaplsx5c35e',
     pt: '#'
   },
   'href.vflg.download': {
@@ -1435,7 +1440,7 @@ var translations = {
   },
   'href.cmg.download': {
     en: 'https://visitflorida.box.com/s/m34tsyslz1l1cjsvwaoz1qdvwd3s22nc',
-    es: '#',
+    es: 'https://visitflorida.box.com/s/hzt1l2gum9f9attgdd5sem24k8nzs015',
     pt: '#'
   },
   'href.ga.download': {
