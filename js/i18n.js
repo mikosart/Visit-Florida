@@ -312,12 +312,12 @@ var translations = {
   },
   'index.copy.line1': {
     en: 'LIVE MORE FLORIDAYS',
-    es: 'UN DÍA COMO NINGÚN OTRO.',
+    es: 'HAY DÍAS...Y HAY FLORIDÍAS.',
     pt: 'UM DIA COMO NENHUM OUTRO.'
   },
   'index.copy.line2': {
     en: 'LIFE\'S TOO SHORT FOR ORDINARY DAYS',
-    es: 'HAY DÍAS…Y HAY FLORIDÍAS.',
+    es: 'UN DÍA COMO NINGÚN OTRO.',
     pt: 'PORQUE A VIDA É CURTA….'
   },
   'index.copy.line3': {
