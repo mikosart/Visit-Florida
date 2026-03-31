@@ -318,12 +318,12 @@ var translations = {
   'index.copy.line2': {
     en: 'LIFE\'S TOO SHORT FOR ORDINARY DAYS',
     es: 'HAY DÍAS…Y HAY FLORIDÍAS.',
-    pt: 'HÁ DIAS... E HÁ FLORIDIAS!'
+    pt: 'PORQUE A VIDA É CURTA….'
   },
   'index.copy.line3': {
     en: 'DISCOVER YOUR VACATION STATE',
     es: 'PORQUE LA VIDA ES CORTA….',
-    pt: 'PORQUE A VIDA É CURTA….'
+    pt: 'HÁ DIAS... E HÁ FLORIDIAS!'
   },
   'index.copy.line4': {
     en: 'WHERE THE DETOUR IS THE DESTINATION',
