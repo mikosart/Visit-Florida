@@ -1416,12 +1416,12 @@ var translations = {
   'href.index.copy': {
     en: 'https://docs.google.com/document/d/1YG2aIytKWi0QfavhGox-aRJOSBIOeEXvN4w6UsI-mXw/edit?tab=t.0',
     es: 'https://docs.google.com/document/d/1AtjftAMcvQaqciKbwYUF_g-LYneoIzvzTfdsoB11ZSA/edit?tab=t.0',
-    pt: '#'
+    pt: 'https://docs.google.com/document/d/1jzMUkPT7aBkq1VZ0iBgNP4_nbf2PS_7OU-SETVo8Z1s/edit?tab=t.0'
   },
   'href.index.itinerary': {
     en: 'https://visitflorida.box.com/s/boyh55hsc3aaa9x44xarcyv5yuqq50vx',
     es: 'https://visitflorida.box.com/s/rfn24tbtd6s57s3o5ff1jvaplsx5c35e',
-    pt: '#'
+    pt: 'https://visitflorida.app.box.com/s/boyh55hsc3aaa9x44xarcyv5yuqq50vx/folder/369663491350'
   },
   'href.vflg.download': {
     en: 'https://visitflorida.box.com/s/7c1rjuo12z86m9lj45yvqyxtndf1pwrg',
@@ -1441,7 +1441,7 @@ var translations = {
   'href.cmg.download': {
     en: 'https://visitflorida.box.com/s/m34tsyslz1l1cjsvwaoz1qdvwd3s22nc',
     es: 'https://visitflorida.box.com/s/hzt1l2gum9f9attgdd5sem24k8nzs015',
-    pt: '#'
+    pt: 'https://visitflorida.box.com/s/gzhm9xtym0dfajegfl52adjfmcuy0ccx'
   },
   'href.ga.download': {
     en: 'https://visitflorida.box.com/s/44mtbmstokrigj76pxv90n0z8h3inoo5',
