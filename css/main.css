@@ -900,14 +900,15 @@ html[lang="es"] .h2--image-considerations{
   position: relative;
   overflow: hidden;
   border-radius: 26px;
-  background: #000;
   cursor: pointer;
+}
+.video-slot.is-playing{
+  background: #000;
   aspect-ratio: 16 / 9;
 }
 .video-slot img{
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
   display: block;
   transition: transform 0.3s, filter 0.3s;
 }
