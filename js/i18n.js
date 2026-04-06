@@ -1482,6 +1482,20 @@ var translations = {
         img.setAttribute('src', dir + '/' + langFolder + '/' + name + suffix + '.png');
       }
     });
+    // Swap localised iframes (data-i18n-iframe holds the EN base src)
+    document.querySelectorAll('[data-i18n-iframe]').forEach(function(iframe) {
+      var base = iframe.getAttribute('data-i18n-iframe'); // EN path e.g. img/section7/banner-di-2/index.html
+      if (lang === 'en') {
+        iframe.setAttribute('src', base);
+      } else {
+        var parts = base.split('/');
+        var filename = parts.pop();           // index.html
+        var folder = parts.pop();             // banner-di-2
+        var dir = parts.join('/');             // img/section7
+        var langFolder = lang === 'es' ? 'es' : 'pt';
+        iframe.setAttribute('src', dir + '/' + langFolder + '/' + folder + '/' + filename);
+      }
+    });
     // Swap localised hrefs (data-i18n-href holds translation key)
     document.querySelectorAll('[data-i18n-href]').forEach(function(el) {
       var key = el.getAttribute('data-i18n-href');
