@@ -1172,6 +1172,11 @@ html[lang="es"] .h2--image-considerations{
   object-position: center;
 }
 
+.digital-item iframe{
+  max-width: 100%;
+  max-height: 100%;
+}
+
 /* Maintain each creative's native aspect ratio so nothing gets cropped */
 .di-1{ aspect-ratio: 443 / 788; }
 .di-2{ aspect-ratio: 444 / 788; }
@@ -1921,27 +1926,27 @@ html[lang="es"] .page--brand-guidelines .bg-title{
 /* Image grids */
 .page--brand-guidelines .bg-sec--s2 .bg-grid{
   display: grid;
-  gap: clamp(10px, 0vw, 22px);
+  gap: clamp(10px, 2vw, 22px);
 }
 
 .page--brand-guidelines .bg-sec--s3 .bg-grid{
   display: grid;
-  gap: clamp(10px, 0vw, 22px);
+  gap: clamp(10px, 2vw, 22px);
 }
 
 .page--brand-guidelines .bg-sec--s4 .bg-grid{
   display: grid;
-  gap: clamp(22px, 0vw, 55px);
+  gap: clamp(22px, 4vw, 55px);
 }
 
 .page--brand-guidelines .bg-sec--s6 .bg-grid{
   display: grid;
-  gap: clamp(10px, 0vw, 22px);
+  gap: clamp(10px, 2vw, 22px);
 }
 
 .page--brand-guidelines .bg-sec--s8 .bg-grid{
   display: grid;
-  gap: clamp(10px, 0vw, 22px);
+  gap: clamp(10px, 2vw, 22px);
 }
 
 .page--brand-guidelines .bg-sec--s4 .bg-grid--tight{ gap: 22px; }
