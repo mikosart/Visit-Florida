@@ -370,11 +370,6 @@ var translations = {
     es: 'Explora los ejemplos de banners digitales a continuación. Puedes adaptarlos fácilmente a tu mercado al:<br/><br/><span style="font-weight: 500;">Cambiar imágenes:</span> accede a la biblioteca de recursos visuales de arriba para obtener imágenes aprobadas.<br/><span style="font-weight: 500;">Actualizar titulares:</span> elige entre las opciones del banco de textos de arriba.<br/><br/>Al elegir un titular, asegúrate de que se mantenga dentro del límite de caracteres una vez traducido a tu idioma local.',
     pt: 'Veja abaixo alguns exemplos de banners digitais para exibição. Você pode facilmente adaptá-los ao seu mercado da seguinte forma:<br/><br/><span style="font-weight: 500;">Troca de imagens:</span> Acesse o acervo de imagens acima para ver os recursos visuais aprovados.<br/><span style="font-weight: 500;">Atualização das manchetes:</span> Escolha uma das opções no banco de textos acima.<br/><br/>Ao escolher um título, selecione um que, após traduzido para o seu idioma, não ultrapasse o limite de caracteres.'
   },
-  'index.digital.btn': {
-    en: 'EXPLORE ANIMATED BANNERS',
-    es: 'EXPLORA BANNERS ANIMADOS',
-    pt: 'EXPLORE OS BANNERS ANIMADOS'
-  },
   'index.itinerary.title': {
     en: 'ITINERARY<br/>CONTENT',
     es: 'CONTENIDO<br/>DE ITINERARIOS',
@@ -484,32 +479,7 @@ var translations = {
   /* ---------------------------------------------------------------
      COMMON (shared across subpages)
      --------------------------------------------------------------- */
-  'common.back': {
-    en: 'BACK',
-    es: 'VOLVER',
-    pt: 'VOLTAR'
-  },
   'bg.back': {
-    en: 'BACK',
-    es: 'VOLVER',
-    pt: 'VOLTAR'
-  },
-  'vflg.back': {
-    en: 'BACK',
-    es: 'VOLVER',
-    pt: 'VOLTAR'
-  },
-  'vfllg.back': {
-    en: 'BACK',
-    es: 'VOLVER',
-    pt: 'VOLTAR'
-  },
-  'cmg.back': {
-    en: 'BACK',
-    es: 'VOLVER',
-    pt: 'VOLTAR'
-  },
-  'ga.back': {
     en: 'BACK',
     es: 'VOLVER',
     pt: 'VOLTAR'
@@ -986,11 +956,6 @@ var translations = {
     es: 'Tenga en cuenta que el relleno resaltado en azul en el lockup del logotipo de uso estándar se divide equitativamente en un cuadrado.',
     pt: 'Observe que o preenchimento destacado em azul no lockup do logotipo de uso padrão é dividido igualmente em um quadrado.'
   },
-  'vfllg.download': {
-    en: 'DOWNLOAD LOGOS',
-    es: 'DESCARGAR LOGOTIPOS',
-    pt: 'DOWNLOAD DE LOGOS'
-  },
   'vfllg.incorrect.title': {
     en: 'VISIT FLORIDA<br/>LOGO +<br/>PARTNER LOGO<br/>INCORRECT USAGE',
     es: 'LOGOTIPO DE<br/>VISIT FLORIDA +<br/>LOGOTIPO DEL SOCIO<br/>USO INCORRECTO',
@@ -1425,18 +1390,13 @@ var translations = {
   },
   'href.vflg.download': {
     en: 'https://visitflorida.box.com/s/7c1rjuo12z86m9lj45yvqyxtndf1pwrg',
-    es: '#',
-    pt: '#'
+    es: 'https://visitflorida.app.box.com/s/7c1rjuo12z86m9lj45yvqyxtndf1pwrg',
+    pt: 'https://visitflorida.app.box.com/s/7c1rjuo12z86m9lj45yvqyxtndf1pwrg'
   },
   'href.vflg.lockup': {
     en: 'https://visitflorida.box.com/s/jxisay0l7q7q5pm1p7xyjw6mijw3yvb0',
-    es: '#',
-    pt: '#'
-  },
-  'href.vfllg.download': {
-    en: 'https://visitflorida.box.com/s/7c1rjuo12z86m9lj45yvqyxtndf1pwrg',
-    es: '#',
-    pt: '#'
+    es: 'https://visitflorida.app.box.com/s/jxisay0l7q7q5pm1p7xyjw6mijw3yvb0',
+    pt: 'https://visitflorida.app.box.com/s/jxisay0l7q7q5pm1p7xyjw6mijw3yvb0'
   },
   'href.cmg.download': {
     en: 'https://visitflorida.box.com/s/m34tsyslz1l1cjsvwaoz1qdvwd3s22nc',
@@ -1445,8 +1405,8 @@ var translations = {
   },
   'href.ga.download': {
     en: 'https://visitflorida.box.com/s/44mtbmstokrigj76pxv90n0z8h3inoo5',
-    es: '#',
-    pt: '#'
+    es: 'https://visitflorida.app.box.com/s/44mtbmstokrigj76pxv90n0z8h3inoo5',
+    pt: 'https://visitflorida.app.box.com/s/44mtbmstokrigj76pxv90n0z8h3inoo5'
   }
 };
 
