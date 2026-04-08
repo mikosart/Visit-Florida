@@ -264,7 +264,7 @@ var translations = {
   },
   'index.video.closing': {
     en: 'Now your audience can Live More Floridays even before they pack their bags!',
-    es: '¡Ahora tu audiencia puede empezar a Vive Más Floridías incluso antes hacer las maletas!',
+    es: '¡Ahora tu audiencia puede empezar a Vivir Más Floridías incluso antes de hacer las maletas!',
     pt: 'Agora seu público pode curtir "Viva Mais Floridias" antes mesmo de arrumar as malas!'
   },
   'index.video.btn': {
