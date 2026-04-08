@@ -276,18 +276,18 @@ var translations = {
   /* Video IDs per language — replace ES/PT when assets arrive */
   'index.video.id1': {
     en: 'I1OJm89bq-4',
-    es: 'I1OJm89bq-4',
-    pt: 'I1OJm89bq-4'
+    es: 'rdLsT39AFLY',
+    pt: 'E7gy9Sc11Y4'
   },
   'index.video.id2': {
     en: 'MsQphwQ1rpE',
-    es: 'MsQphwQ1rpE',
-    pt: 'MsQphwQ1rpE'
+    es: 'XGwRhuy3dXE',
+    pt: 'P3l9CMV68FA'
   },
   'index.video.id3': {
     en: 'rYglEncZnZI',
-    es: 'rYglEncZnZI',
-    pt: 'rYglEncZnZI'
+    es: 'eN-m-31RiIc',
+    pt: '7TVPsEJEWxk'
   },
 
   'index.copy.title': {
@@ -1407,6 +1407,11 @@ var translations = {
     en: 'https://visitflorida.box.com/s/44mtbmstokrigj76pxv90n0z8h3inoo5',
     es: 'https://visitflorida.app.box.com/s/44mtbmstokrigj76pxv90n0z8h3inoo5',
     pt: 'https://visitflorida.app.box.com/s/44mtbmstokrigj76pxv90n0z8h3inoo5'
+  },
+  'href.index.video': {
+    en: 'https://www.youtube.com/playlist?list=PLBDWU8gsNXlI62wjdXUkOrs420ATLiEQm',
+    es: 'https://www.youtube.com/playlist?list=PLBDWU8gsNXlINKIk73Wif8AHCT_mTUwIU',
+    pt: 'https://www.youtube.com/playlist?list=PLBDWU8gsNXlIG5Hfq-s9HxANFVsk5Mbxy'
   }
 };
 
