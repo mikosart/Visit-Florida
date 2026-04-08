@@ -1375,8 +1375,8 @@ var translations = {
      --------------------------------------------------------------- */
   'href.index.image': {
     en: 'https://visitflorida.box.com/s/fu7c9yeejp4p0ey5fy3b5vigqhaxw9ie',
-    es: '#',
-    pt: '#'
+    es: 'https://visitflorida.app.box.com/s/fu7c9yeejp4p0ey5fy3b5vigqhaxw9ie',
+    pt: 'https://visitflorida.app.box.com/s/fu7c9yeejp4p0ey5fy3b5vigqhaxw9ie'
   },
   'href.index.copy': {
     en: 'https://docs.google.com/document/d/1YG2aIytKWi0QfavhGox-aRJOSBIOeEXvN4w6UsI-mXw/edit?tab=t.0',
