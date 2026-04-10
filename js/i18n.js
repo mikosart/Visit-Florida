@@ -790,7 +790,7 @@ var translations = {
   'vflg.contrast.p2': {
     en: 'In most applications, the logo will be used in white sand on image or colored background. If a lighter background is needed, the Bougainvillea or Ocean blue can be used to provide sufficient contrast while staying within the brand palette.',
     es: 'En la mayoría de las aplicaciones, el logotipo se usará en White Sand sobre una imagen o un fondo de color. Si se necesita un fondo más claro, se puede usar Bougainvillea u Ocean Blue para asegurar un contraste suficiente, manteniéndose dentro de la paleta de la marca.',
-    pt: 'Na maioria das aplicações, o logotipo será usado em areia branca sobre uma imagem ou fundo colorido. Caso seja necessário um fundo mais claro, os tons bougainvillea ou azul oceano podem ser usados para proporcionar contraste suficiente, dentro da paleta de cores da marca.'
+    pt: 'Na maioria das aplicações, o logotipo será usado em areia branca sobre uma imagem ou fundo colorido. Caso seja necessário um fundo mais claro, os tons Bougainvillea ou Ocean Blue podem ser usados para proporcionar contraste suficiente, dentro da paleta de cores da marca.'
   },
   'vflg.contrast.white': {
     en: 'LOGO ON WHITE',
@@ -853,9 +853,9 @@ var translations = {
     pt: '<span class="vflg-iu-caption__lead">NÃO</span> REMOVA PARTES DO LOGOTIPO'
   },
   'vflg.iu7': {
-    en: '<span class="vflg-iu-caption__lead">DO NOT</span> Apply An Approved Color To The Logo',
+    en: '<span class="vflg-iu-caption__lead">DO NOT</span> Apply An Unapproved Color To The Logo',
     es: '<span class="vflg-iu-caption__lead">NO</span> APLICAR UN COLOR NO APROBADO AL LOGOTIPO',
-    pt: '<span class="vflg-iu-caption__lead">NÃO</span> APLIQUE UMA COR APROVADA AO LOGOTIPO'
+    pt: '<span class="vflg-iu-caption__lead">NÃO</span> APLIQUE UMA COR NÃO APROVADA AO LOGOTIPO'
   },
   'vflg.iu8': {
     en: '<span class="vflg-iu-caption__lead">DO NOT</span> Apply A Gradient To The Logo',
@@ -1242,12 +1242,12 @@ var translations = {
   'ga.regional.single': {
     en: '<strong>SINGLE-COLOR REGIONAL MAP</strong><br/>Designed for clarity and versatility, the single color regional map is best suited for web applications, particularly where interactive or functional use is required (e.g., hover states).',
     es: '<strong>MAPA REGIONAL MONOCOLOR</strong><br/>Diseñado para claridad y versatilidad, el mapa regional monocolor es ideal para aplicaciones web, especialmente donde se requiere uso interactivo o funcional (por ejemplo, estados hover).',
-    pt: '<strong>MAPA REGIONAL MONOCROMÁTICO</strong><br/>Projetado para clareza e versatilidade, o mapa regional monocromático é ideal para aplicações web, especialmente onde é necessário uso interativo ou funcional (por exemplo, estados de hover).'
+    pt: '<strong>MAPA REGIONAL MONOCROMÁTICO</strong><br/>Projetado para clareza e versatilidade, o mapa regional monocromático é ideal para aplicações na web, especialmente onde é necessário uso interativo ou funcional (por exemplo, estados de hover).'
   },
   'ga.regional.multi': {
     en: '<strong>MULTI-COLOR REGIONAL MAP</strong><br/>This version offers a more illustrative and visually engaging representation of Florida\'s regions. It is appropriate for use across web, social media, and print, where a more expressive or branded aesthetic is desired.',
     es: '<strong>MAPA REGIONAL MULTICOLOR</strong><br/>Esta versión ofrece una representación más ilustrativa y visualmente atractiva de las regiones de Florida. Es apropiada para uso en web, redes sociales e impresión, donde se desea una estética más expresiva o de marca.',
-    pt: '<strong>MAPA REGIONAL MULTICOLORIDO</strong><br/>Esta versão oferece uma representação mais ilustrativa e visualmente envolvente das regiões da Flórida. É apropriada para uso em web, mídias sociais e impressão, onde uma estética mais expressiva ou de marca é desejada.'
+    pt: '<strong>MAPA REGIONAL MULTICOLORIDO</strong><br/>Esta versão oferece uma representação mais ilustrativa e visualmente envolvente das regiões da Flórida. É apropriada para uso na web, mídias sociais e impressão, onde uma estética mais expressiva ou de marca é desejada.'
   },
   'ga.regional.p3': {
     en: 'Use maps consistently and according to context, ensuring they align with the intended purpose and overall visual tone of the campaign or platform.',
@@ -1302,7 +1302,7 @@ var translations = {
   'ga.continued.p1': {
     en: 'When using the Florida map, there may be occasions when specific regions or cities need to be highlighted or called out. The Flagua brand color should be used to emphasize regions and the Solar Flare brand color should be used to mark city locations with pins.',
     es: 'Al usar el mapa de Florida, puede haber ocasiones en que sea necesario resaltar o señalar regiones o ciudades específicas. El color de la marca Flagua debe usarse para enfatizar regiones y el color de la marca Solar Flare debe usarse para marcar ubicaciones de ciudades con pines.',
-    pt: 'Ao usar o mapa da Flórida, pode haver ocasiões em que regiões ou cidades específicas precisem ser destacadas ou sinalizadas. A cor da marca Flagua deve ser usada para enfatizar regiões e a cor da marca Solar Flare deve ser usada para marcar localizações de cidades com pinos.'
+    pt: 'Ao usar o mapa da Flórida, pode haver ocasiões em que regiões ou cidades específicas precisem ser destacadas ou sinalizadas. A cor da marca Flaqua deve ser usada para enfatizar regiões e a cor da marca Solar Flare deve ser usada para marcar localizações de cidades com pinos.'
   },
   'ga.continued.p2': {
     en: 'For city callouts, the connecting stroke between the label and the corresponding pin should be reversed out for maximum legibility.',
