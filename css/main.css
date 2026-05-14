@@ -1625,6 +1625,18 @@ html[lang="es"] .page--brand-guidelines .bg-title{
     font-size: clamp(42px, 11.5vw, 56px) !important;
     letter-spacing: 0;
   }
+  /* ES mobile: force s12 title into 3 lines to avoid the natural 4-line wrap */
+  html[lang="es"] .page--brand-guidelines .bg-sec--s12 .bg-title{
+    font-size: 0;
+    line-height: 0;
+  }
+  html[lang="es"] .page--brand-guidelines .bg-sec--s12 .bg-title::before{
+    content: "LINEAMIENTOS\A DE APLICACIÓN\A DE TEXTURAS";
+    white-space: pre-line;
+    display: block;
+    font-size: clamp(38px, 10.5vw, 52px);
+    line-height: 0.98;
+  }
 }
 
 /* Back pill (Section 1) */
