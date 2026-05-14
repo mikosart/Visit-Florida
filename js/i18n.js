@@ -705,6 +705,117 @@ var translations = {
   },
 
   /* ---------------------------------------------------------------
+     MACRO TEXTURES — Section 09: Macro Textures Palette
+     --------------------------------------------------------------- */
+  'bg.mtpalette.title': {
+    en: 'MACRO TEXTURES<br/>PALETTE',
+    es: 'PALETA DE<br/>TEXTURAS MACRO',
+    pt: 'PALETA DE<br/>TEXTURAS MACRO'
+  },
+  'bg.mtpalette.p1': {
+    en: "To complement brand photography in the 'Live More Floridays' campaign, the primary VISIT FLORIDA color palette is expanded into the addition of complementary Florida-inspired textural imagery.",
+    es: 'Para complementar la fotografía de marca en la campaña "Vive Más Floridías", la paleta de colores principales de VISIT FLORIDA se amplía con la incorporación de imágenes con textura inspiradas en Florida.',
+    pt: 'Para complementar a fotografia da marca na campanha "Viva Mais Floridias", a paleta de cores principal do VISIT FLORIDA é expandida com a adição de imagens com texturas complementares inspiradas na Flórida.'
+  },
+  'bg.mtpalette.p2': {
+    en: 'These textures provide visual context by introducing bold, vibrant accent colors that enhance the sense of feeling or place with added detail and depth.',
+    es: 'Estas texturas aportan contexto visual al introducir colores llamativos y vibrantes que intensifican la sensación o el ambiente del lugar con mayor detalle y profundidad.',
+    pt: 'Essas texturas fornecem contexto visual introduzindo cores ousadas e tons vibrantes que aumentam a noção de sensação ou espaço com detalhes e profundidade adicionais.'
+  },
+
+  /* ---------------------------------------------------------------
+     MACRO TEXTURES — Section 10: Macro Textures Usage
+     --------------------------------------------------------------- */
+  'bg.mtusage.title': {
+    en: 'MACRO TEXTURES<br/>USAGE',
+    es: 'USO DE<br/>TEXTURAS MACRO',
+    pt: 'USO DAS<br/>TEXTURAS MACRO'
+  },
+  'bg.mtusage.p1': {
+    en: 'A variety of color textures can be used to complement imagery and add energy to creative layouts. These textures should be applied in a "macro" style fashion by focusing on detailed elements to create a sense of depth and vibrancy.',
+    es: 'Se puede usar una variedad de texturas de color para complementar las imágenes y aportar energía a los diseños creativos. Estas texturas deben aplicarse en estilo "macro", centrándose en elementos detallados para generar una sensación de profundidad y dinamismo.',
+    pt: 'Uma variedade de texturas de cores pode ser usada para complementar imagens e adicionar energia aos layouts criativos. Essas texturas devem ser aplicadas em um estilo "macro" com foco em elementos detalhados para criar um senso de profundidade e vibração.'
+  },
+  'bg.mtusage.p2': {
+    en: 'These textures can be layered behind imagery, used to frame visuals, or serve as a background for text. Their role is to reinforce a sense of place or mood, complementing the primary imagery and adding depth or vibrancy to the overall composition.',
+    es: 'Estas texturas pueden disponerse en capas detrás de imágenes, usarse para enmarcar elementos visuales o servir como fondo para texto. Su función es reforzar la sensación de lugar o el ambiente, complementando las imágenes principales y añadiendo profundidad o dinamismo a la composición general.',
+    pt: 'Essas texturas podem ser incluídas como camadas atrás das imagens, usadas para enquadrar os recursos visuais ou servir de fundo para o texto. O papel deste recurso é reforçar um senso de espaço ou atmosfera, complementando as imagens principais e adicionando profundidade ou vibração à composição geral.'
+  },
+  'bg.mtusage.p3': {
+    en: 'Textures are meant to enhance the design without distracting from primary focal imagery, typography, or brand marks.',
+    es: 'Las texturas deben realzar el diseño sin distraer la atención de las imágenes principales, la tipografía o los elementos de la marca.',
+    pt: 'As texturas são feitas para aprimorar o design sem desviar a atenção da imagem focal principal, tipografia ou da marca.'
+  },
+
+  /* ---------------------------------------------------------------
+     MACRO TEXTURES — Section 11: Macro Textures Imagery
+     --------------------------------------------------------------- */
+  'bg.mtimagery.title': {
+    en: 'MACRO TEXTURES<br/>IMAGERY',
+    es: 'IMÁGENES DE<br/>TEXTURAS MACRO',
+    pt: 'IMAGENS DE<br/>TEXTURAS MACRO'
+  },
+  'bg.mtimagery.p1': {
+    en: 'Macro texture imagery should maintain tonal consistency and be free from distracting patterns or elements to avoid overall visual clutter in the layout.',
+    es: 'Las imágenes de texturas macro deben mantener consistencia tonal y no tener patrones o elementos que distraigan, para evitar la sobrecarga visual en el diseño.',
+    pt: 'As imagens de texturas macro devem manter a consistência tonal e não podem ter padrões ou elementos de distração para evitar a desordem visual geral no layout.'
+  },
+  'bg.mtimagery.p2': {
+    en: 'A variety of imagery can be used in each color category as long as the overall tone is consistent with that specific brand color.',
+    es: 'Se puede usar una variedad de imágenes dentro de cada categoría de color, siempre que el tono general sea coherente con el color específico de la marca.',
+    pt: 'Uma variedade de imagens pode ser usada em cada categoria de cores, desde que o tom geral seja consistente com essa cor específica da marca.'
+  },
+
+  /* ---------------------------------------------------------------
+     MACRO TEXTURES — Section 12: Texture Application Guidelines
+     --------------------------------------------------------------- */
+  'bg.mtapp.title': {
+    en: 'TEXTURE APPLICATION<br/>GUIDELINES',
+    es: 'LINEAMIENTOS DE<br/>APLICACIÓN DE TEXTURAS',
+    pt: 'DIRETRIZES DE<br/>APLICAÇÃO DAS TEXTURAS'
+  },
+  'bg.mtapp.s1.title': {
+    en: 'USE TEXTURE THOUGHTFULLY',
+    es: 'USAR TEXTURAS CON CRITERIO',
+    pt: 'USAR TEXTURAS DE FORMA CRITERIOSA'
+  },
+  'bg.mtapp.s1.text': {
+    en: "Color textures should serve as supportive design elements. They're most effective when used to complement, not compete with, the primary content.",
+    es: 'Las texturas de color deben funcionar como elementos de apoyo en el diseño. Son más efectivas cuando complementan, en lugar de competir con, el contenido principal.',
+    pt: 'As texturas de cores devem servir como elementos de design de apoio. São mais eficazes quando usadas para complementar o conteúdo principal, e não competir com ele.'
+  },
+  'bg.mtapp.s2.title': {
+    en: 'MIX TEXTURES WITH FLAT BACKGROUNDS',
+    es: 'COMBINAR TEXTURAS CON FONDOS PLANOS',
+    pt: 'MISTURAR TEXTURAS COM FUNDOS UNIFORMES'
+  },
+  'bg.mtapp.s2.text': {
+    en: 'In multi-frame layouts such as social carousels, presentations, publications, or web pages, use a thoughtful combination of textured and flat brand color backgrounds. This creates visual variety while preventing busy-ness.',
+    es: 'En diseños de múltiples marcos, como carruseles sociales, presentaciones, publicaciones o páginas web, se recomienda una combinación equilibrada de fondos planos y con textura de la paleta de colores de la marca. Esto crea variedad visual y evita la saturación.',
+    pt: 'Em layouts de vários quadros, como carrossel para mídia social, apresentações, publicações ou páginas da web, use uma combinação criteriosa de fundo de cores texturizadas e sólidas da marca. Isso cria variedade visual ao mesmo tempo que evita a perspectiva congestionada.'
+  },
+  'bg.mtapp.s3.title': {
+    en: 'INCLUDE VISUAL BREAKS',
+    es: 'INCLUIR PAUSAS VISUALES',
+    pt: 'INCLUIR QUEBRAS VISUAIS'
+  },
+  'bg.mtapp.s3.text': {
+    en: 'Incorporate flat color fills or full-bleed imagery throughout the layout as "breaks." These moments of simplicity provide rhythm and breathing room for key messages or visuals to stand out.',
+    es: 'Incorporar rellenos de color plano o imágenes a sangre en el diseño como "pausas". Estos momentos de simplicidad generan ritmo y espacio libre, permitiendo que se destaquen los mensajes clave o las imágenes principales.',
+    pt: 'Incorpore o preenchimento de cores sólidas ou imagens "sangradas" (além da margem) ao longo do layout como uma alternativa de "quebra visual". Esses momentos de simplicidade fornecem ritmo e espaço para mensagens importantes ou recursos visuais se destacarem.'
+  },
+  'bg.mtapp.download': {
+    en: 'DOWNLOAD TEXTURES',
+    es: 'DESCARGAR TEXTURAS',
+    pt: 'DOWNLOAD DE TEXTURAS'
+  },
+  'href.mtapp.download': {
+    en: 'https://visitflorida.box.com/s/zckbdfw7pamm05lptawain0mfgl0bcxl',
+    es: 'https://visitflorida.box.com/s/zckbdfw7pamm05lptawain0mfgl0bcxl',
+    pt: 'https://visitflorida.box.com/s/zckbdfw7pamm05lptawain0mfgl0bcxl'
+  },
+
+  /* ---------------------------------------------------------------
      VF-LOGO-GUIDELINES.HTML
      --------------------------------------------------------------- */
   'vflg.title': {
