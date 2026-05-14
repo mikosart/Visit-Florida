@@ -117,6 +117,11 @@ var translations = {
     es: 'RECURSOS<br/>GRÁFICOS',
     pt: 'RECURSOS<br/>GRÁFICOS'
   },
+  'index.brand.btn6': {
+    en: 'MACRO<br/>TEXTURES',
+    es: 'TEXTURAS<br/>MACRO',
+    pt: 'TEXTURAS<br/>MACRO'
+  },
   'consolidated.title': {
     en: 'BRAND<br/>GUIDELINES<br/>&amp; LOGOS',
     es: 'LINEAMIENTOS<br/>DE MARCA<br/>Y LOGOTIPOS',
@@ -151,6 +156,11 @@ var translations = {
     en: 'GRAPHIC ASSETS',
     es: 'RECURSOS GRÁFICOS',
     pt: 'RECURSOS GRÁFICOS'
+  },
+  'con.pill.textures': {
+    en: 'MACRO TEXTURES',
+    es: 'TEXTURAS MACRO',
+    pt: 'TEXTURAS MACRO'
   },
   'con.toggle.label': {
     en: 'SECTIONS',
@@ -708,9 +718,9 @@ var translations = {
      MACRO TEXTURES — Section 09: Macro Textures Palette
      --------------------------------------------------------------- */
   'bg.mtpalette.title': {
-    en: 'MACRO TEXTURES<br/>PALETTE',
-    es: 'PALETA DE<br/>TEXTURAS MACRO',
-    pt: 'PALETA DE<br/>TEXTURAS MACRO'
+    en: 'MACRO<br/>TEXTURES<br/>PALETTE',
+    es: 'PALETA DE<br/>TEXTURAS<br/>MACRO',
+    pt: 'PALETA DE<br/>TEXTURAS<br/>MACRO'
   },
   'bg.mtpalette.p1': {
     en: "To complement brand photography in the 'Live More Floridays' campaign, the primary VISIT FLORIDA color palette is expanded into the addition of complementary Florida-inspired textural imagery.",
@@ -727,9 +737,9 @@ var translations = {
      MACRO TEXTURES — Section 10: Macro Textures Usage
      --------------------------------------------------------------- */
   'bg.mtusage.title': {
-    en: 'MACRO TEXTURES<br/>USAGE',
-    es: 'USO DE<br/>TEXTURAS MACRO',
-    pt: 'USO DAS<br/>TEXTURAS MACRO'
+    en: 'MACRO<br/>TEXTURES<br/>USAGE',
+    es: 'USO DE<br/>TEXTURAS<br/>MACRO',
+    pt: 'USO DAS<br/>TEXTURAS<br/>MACRO'
   },
   'bg.mtusage.p1': {
     en: 'A variety of color textures can be used to complement imagery and add energy to creative layouts. These textures should be applied in a "macro" style fashion by focusing on detailed elements to create a sense of depth and vibrancy.',
@@ -751,9 +761,9 @@ var translations = {
      MACRO TEXTURES — Section 11: Macro Textures Imagery
      --------------------------------------------------------------- */
   'bg.mtimagery.title': {
-    en: 'MACRO TEXTURES<br/>IMAGERY',
-    es: 'IMÁGENES DE<br/>TEXTURAS MACRO',
-    pt: 'IMAGENS DE<br/>TEXTURAS MACRO'
+    en: 'MACRO<br/>TEXTURES<br/>IMAGERY',
+    es: 'IMÁGENES DE<br/>TEXTURAS<br/>MACRO',
+    pt: 'IMAGENS DE<br/>TEXTURAS<br/>MACRO'
   },
   'bg.mtimagery.p1': {
     en: 'Macro texture imagery should maintain tonal consistency and be free from distracting patterns or elements to avoid overall visual clutter in the layout.',

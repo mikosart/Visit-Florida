@@ -2163,13 +2163,17 @@ html[lang="es"] .page--brand-guidelines .bg-title{
 /* =========================
    Section 9 — Macro Textures Palette (blue bg, single image)
    ========================= */
-.page--brand-guidelines .bg-sec--s9 .bg-desc{
-  margin: 0 73px 45px;
+.page--brand-guidelines .bg-sec--s9 .bg-desc,
+.page--brand-guidelines .bg-sec--s10 .bg-desc,
+.page--brand-guidelines .bg-sec--s11 .bg-desc{
+  width: min(820px, 100%);
+  margin: 0 auto 45px;
   font-family: var(--vf-font-md);
   font-weight: 400;
   font-size: 17px;
   line-height: 1.4;
   letter-spacing: 0.01em;
+  text-align: center;
 }
 .page--brand-guidelines .bg-sec--s9 .bg-desc p{ margin: 0; }
 .page--brand-guidelines .bg-sec--s9 .bg-full{
@@ -2182,14 +2186,6 @@ html[lang="es"] .page--brand-guidelines .bg-title{
 /* =========================
    Section 10 — Macro Textures Usage (cream bg, 3 posters)
    ========================= */
-.page--brand-guidelines .bg-sec--s10 .bg-desc{
-  margin: 0 73px 45px;
-  font-family: var(--vf-font-md);
-  font-weight: 400;
-  font-size: 17px;
-  line-height: 1.4;
-  letter-spacing: 0.01em;
-}
 .page--brand-guidelines .bg-sec--s10 .bg-desc p{ margin: 0; }
 .page--brand-guidelines .bg-sec--s10 .bg-grid{
   display: grid;
@@ -2208,14 +2204,6 @@ html[lang="es"] .page--brand-guidelines .bg-title{
 /* =========================
    Section 11 — Macro Textures Imagery (cream bg, single image)
    ========================= */
-.page--brand-guidelines .bg-sec--s11 .bg-desc{
-  margin: 0 73px 45px;
-  font-family: var(--vf-font-md);
-  font-weight: 400;
-  font-size: 17px;
-  line-height: 1.4;
-  letter-spacing: 0.01em;
-}
 .page--brand-guidelines .bg-sec--s11 .bg-desc p{ margin: 0; }
 .page--brand-guidelines .bg-sec--s11 .bg-full{
   width: 100%;
@@ -2227,6 +2215,13 @@ html[lang="es"] .page--brand-guidelines .bg-title{
 /* =========================
    Section 12 — Texture Application Guidelines (pink bg, image + bullets + CTA)
    ========================= */
+.page--brand-guidelines .bg-sec--s12 .bg-media{
+  width: min(863px, 100%);
+  background: var(--white-sano, #fffffb);
+  border-radius: 24px;
+  padding: 8px 4px;
+  box-sizing: border-box;
+}
 .page--brand-guidelines .bg-sec--s12 .bg-full{
   width: 100%;
   height: auto;
@@ -2234,12 +2229,12 @@ html[lang="es"] .page--brand-guidelines .bg-title{
   border-radius: 0;
 }
 .page--brand-guidelines .bg-sec--s12 .mtapp-guidelines{
-  width: min(960px, 100%);
-  margin: 48px auto 0;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: clamp(24px, 4vw, 48px);
-  text-align: left;
+  width: min(720px, 100%);
+  margin: 0 auto 45px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  text-align: center;
 }
 .page--brand-guidelines .bg-sec--s12 .mtapp-subtitle{
   margin: 0 0 10px;
@@ -2268,10 +2263,6 @@ html[lang="es"] .page--brand-guidelines .bg-title{
 
 @media (max-width: 760px){
   .page--brand-guidelines .bg-sec--s10 .bg-grid--3{ grid-template-columns: 1fr; }
-  .page--brand-guidelines .bg-sec--s12 .mtapp-guidelines{
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
   .page--brand-guidelines .bg-sec--s9 .bg-desc,
   .page--brand-guidelines .bg-sec--s10 .bg-desc,
   .page--brand-guidelines .bg-sec--s11 .bg-desc{
@@ -2289,7 +2280,7 @@ html[lang="es"] .page--brand-guidelines .bg-title{
 .page--vf-logo-guidelines .vflg--s1 .vflg-stage{
   width: var(--stage-w);
   margin: 0 auto;
-  padding: 30px 50px 92px;
+  padding: 96px 50px 92px;
   text-align: center;
 }
 
