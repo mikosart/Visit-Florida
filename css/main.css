@@ -1669,61 +1669,17 @@ html[lang="es"] .page--brand-guidelines .bg-title{
 .page--brand-guidelines .bg-sec--s1 .bg-back:active{ transform: translateY(0); }
 
 /* Titles */
-.page--brand-guidelines .bg-sec--s2 .bg-title{
-  margin: 0 0 45px;
-  font-weight: 800;
-  letter-spacing: 0.01em;
-  line-height: 0.86;
-  text-transform: uppercase;
-  font-size: clamp(56px, 8.5vw, 110px);
-}
-
-.page--brand-guidelines .bg-sec--s3 .bg-title{
-  margin: 0 0 45px;
-  font-weight: 800;
-  letter-spacing: 0.01em;
-  line-height: 0.86;
-  text-transform: uppercase;
-  font-size: clamp(56px, 8.5vw, 110px);
-}
-
-.page--brand-guidelines .bg-sec--s4 .bg-title{
-  margin: 0 0 45px;
-  font-weight: 800;
-  letter-spacing: 0.01em;
-  line-height: 0.86;
-  text-transform: uppercase;
-  font-size: clamp(56px, 8.5vw, 110px);
-}
-
-.page--brand-guidelines .bg-sec--s5 .bg-title{
-  margin: 0 0 45px;
-  font-weight: 800;
-  letter-spacing: 0.01em;
-  line-height: 0.86;
-  text-transform: uppercase;
-  font-size: clamp(56px, 8.5vw, 110px);
-}
-
-.page--brand-guidelines .bg-sec--s6 .bg-title{
-  margin: 0 0 45px;
-  font-weight: 800;
-  letter-spacing: 0.01em;
-  line-height: 0.86;
-  text-transform: uppercase;
-  font-size: clamp(56px, 8.5vw, 110px);
-}
-
-.page--brand-guidelines .bg-sec--s7 .bg-title{
-  margin: 0 0 45px;
-  font-weight: 800;
-  letter-spacing: 0.01em;
-  line-height: 0.86;
-  text-transform: uppercase;
-  font-size: clamp(56px, 8.5vw, 110px);
-}
-
-.page--brand-guidelines .bg-sec--s8 .bg-title{
+.page--brand-guidelines .bg-sec--s2 .bg-title,
+.page--brand-guidelines .bg-sec--s3 .bg-title,
+.page--brand-guidelines .bg-sec--s4 .bg-title,
+.page--brand-guidelines .bg-sec--s5 .bg-title,
+.page--brand-guidelines .bg-sec--s6 .bg-title,
+.page--brand-guidelines .bg-sec--s7 .bg-title,
+.page--brand-guidelines .bg-sec--s8 .bg-title,
+.page--brand-guidelines .bg-sec--s9 .bg-title,
+.page--brand-guidelines .bg-sec--s10 .bg-title,
+.page--brand-guidelines .bg-sec--s11 .bg-title,
+.page--brand-guidelines .bg-sec--s12 .bg-title{
   margin: 0 0 45px;
   font-weight: 800;
   letter-spacing: 0.01em;
