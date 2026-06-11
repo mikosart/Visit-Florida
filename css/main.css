@@ -1550,7 +1550,6 @@ html[lang="pt-BR"] .h2--itineraryhub{
 .page--brand-guidelines .bg-sec--s8 .bg-stage,
 .page--brand-guidelines .bg-sec--s9 .bg-stage,
 .page--brand-guidelines .bg-sec--s10 .bg-stage,
-.page--brand-guidelines .bg-sec--s11 .bg-stage,
 .page--brand-guidelines .bg-sec--s12 .bg-stage{
   width: var(--stage-w);
   margin: 0 auto;
@@ -1569,7 +1568,6 @@ html[lang="pt-BR"] .h2--itineraryhub{
   .page--brand-guidelines .bg-sec--s8 .bg-stage,
   .page--brand-guidelines .bg-sec--s9 .bg-stage,
   .page--brand-guidelines .bg-sec--s10 .bg-stage,
-  .page--brand-guidelines .bg-sec--s11 .bg-stage,
   .page--brand-guidelines .bg-sec--s12 .bg-stage{
     /* Use the same global stage width system used across the toolkit.
        The old calc() made the stage too narrow in portrait mobile, which clipped long headings. */
@@ -1690,7 +1688,6 @@ html[lang="es"] .page--brand-guidelines .bg-title{
 .page--brand-guidelines .bg-sec--s8 .bg-title,
 .page--brand-guidelines .bg-sec--s9 .bg-title,
 .page--brand-guidelines .bg-sec--s10 .bg-title,
-.page--brand-guidelines .bg-sec--s11 .bg-title,
 .page--brand-guidelines .bg-sec--s12 .bg-title{
   margin: 0 0 45px;
   font-weight: 800;
@@ -1885,7 +1882,6 @@ html[lang="es"] .page--brand-guidelines .bg-title{
 .page--brand-guidelines .bg-sec--s8 .bg-media,
 .page--brand-guidelines .bg-sec--s9 .bg-media,
 .page--brand-guidelines .bg-sec--s10 .bg-media,
-.page--brand-guidelines .bg-sec--s11 .bg-media,
 .page--brand-guidelines .bg-sec--s12 .bg-media{
   width: min(85%, 1080px);
   margin: 0 auto;
@@ -2176,8 +2172,7 @@ html[lang="es"] .page--brand-guidelines .bg-title{
    Section 9 — Macro Textures Palette (blue bg, single image)
    ========================= */
 .page--brand-guidelines .bg-sec--s9 .bg-desc,
-.page--brand-guidelines .bg-sec--s10 .bg-desc,
-.page--brand-guidelines .bg-sec--s11 .bg-desc{
+.page--brand-guidelines .bg-sec--s10 .bg-desc{
   width: min(820px, 100%);
   margin: 0 auto 45px;
   font-family: var(--vf-font-md);
@@ -2207,17 +2202,6 @@ html[lang="es"] .page--brand-guidelines .bg-title{
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 .page--brand-guidelines .bg-sec--s10 .bg-grid img{
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 0;
-}
-
-/* =========================
-   Section 11 — Macro Textures Imagery (cream bg, single image)
-   ========================= */
-.page--brand-guidelines .bg-sec--s11 .bg-desc p{ margin: 0; }
-.page--brand-guidelines .bg-sec--s11 .bg-full{
   width: 100%;
   height: auto;
   display: block;
@@ -2276,8 +2260,7 @@ html[lang="es"] .page--brand-guidelines .bg-title{
 @media (max-width: 760px){
   .page--brand-guidelines .bg-sec--s10 .bg-grid--3{ grid-template-columns: 1fr; }
   .page--brand-guidelines .bg-sec--s9 .bg-desc,
-  .page--brand-guidelines .bg-sec--s10 .bg-desc,
-  .page--brand-guidelines .bg-sec--s11 .bg-desc{
+  .page--brand-guidelines .bg-sec--s10 .bg-desc{
     width: min(720px, 100%);
     margin: 0 auto 30px;
     padding: 0 10px;

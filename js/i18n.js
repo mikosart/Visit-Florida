@@ -747,33 +747,14 @@ var translations = {
     pt: 'Uma variedade de texturas de cores pode ser usada para complementar imagens e adicionar energia aos layouts criativos. Essas texturas devem ser aplicadas em um estilo "macro" com foco em elementos detalhados para criar um senso de profundidade e vibração.'
   },
   'bg.mtusage.p2': {
-    en: 'These textures can be layered behind imagery, used to frame visuals, or serve as a background for text. Their role is to reinforce a sense of place or mood, complementing the primary imagery and adding depth or vibrancy to the overall composition.',
-    es: 'Estas texturas pueden disponerse en capas detrás de imágenes, usarse para enmarcar elementos visuales o servir como fondo para texto. Su función es reforzar la sensación de lugar o el ambiente, complementando las imágenes principales y añadiendo profundidad o dinamismo a la composición general.',
-    pt: 'Essas texturas podem ser incluídas como camadas atrás das imagens, usadas para enquadrar os recursos visuais ou servir de fundo para o texto. O papel deste recurso é reforçar um senso de espaço ou atmosfera, complementando as imagens principais e adicionando profundidade ou vibração à composição geral.'
+    en: 'These textures can be layered behind imagery, used to frame visuals, or serve as a background for text.',
+    es: 'Estas texturas pueden disponerse en capas detrás de imágenes, usarse para enmarcar elementos visuales o servir como fondo para texto.',
+    pt: 'Essas texturas podem ser incluídas como camadas atrás das imagens, usadas para enquadrar os recursos visuais ou servir de fundo para o texto.'
   },
   'bg.mtusage.p3': {
     en: 'Textures are meant to enhance the design without distracting from primary focal imagery, typography, or brand marks.',
     es: 'Las texturas deben realzar el diseño sin distraer la atención de las imágenes principales, la tipografía o los elementos de la marca.',
     pt: 'As texturas são feitas para aprimorar o design sem desviar a atenção da imagem focal principal, tipografia ou da marca.'
-  },
-
-  /* ---------------------------------------------------------------
-     MACRO TEXTURES — Section 11: Macro Textures Imagery
-     --------------------------------------------------------------- */
-  'bg.mtimagery.title': {
-    en: 'MACRO<br/>TEXTURES<br/>IMAGERY',
-    es: 'IMÁGENES DE<br/>TEXTURAS<br/>MACRO',
-    pt: 'IMAGENS DE<br/>TEXTURAS<br/>MACRO'
-  },
-  'bg.mtimagery.p1': {
-    en: 'Macro texture imagery should maintain tonal consistency and be free from distracting patterns or elements to avoid overall visual clutter in the layout.',
-    es: 'Las imágenes de texturas macro deben mantener consistencia tonal y no tener patrones o elementos que distraigan, para evitar la sobrecarga visual en el diseño.',
-    pt: 'As imagens de texturas macro devem manter a consistência tonal e não podem ter padrões ou elementos de distração para evitar a desordem visual geral no layout.'
-  },
-  'bg.mtimagery.p2': {
-    en: 'A variety of imagery can be used in each color category as long as the overall tone is consistent with that specific brand color.',
-    es: 'Se puede usar una variedad de imágenes dentro de cada categoría de color, siempre que el tono general sea coherente con el color específico de la marca.',
-    pt: 'Uma variedade de imagens pode ser usada em cada categoria de cores, desde que o tom geral seja consistente com essa cor específica da marca.'
   },
 
   /* ---------------------------------------------------------------
