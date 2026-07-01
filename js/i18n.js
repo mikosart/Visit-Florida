@@ -715,25 +715,6 @@ var translations = {
   },
 
   /* ---------------------------------------------------------------
-     MACRO TEXTURES — Section 09: Macro Textures Palette
-     --------------------------------------------------------------- */
-  'bg.mtpalette.title': {
-    en: 'MACRO<br/>TEXTURES<br/>PALETTE',
-    es: 'PALETA DE<br/>TEXTURAS<br/>MACRO',
-    pt: 'PALETA DE<br/>TEXTURAS<br/>MACRO'
-  },
-  'bg.mtpalette.p1': {
-    en: "To complement brand photography in the 'Live More Floridays' campaign, the primary VISIT FLORIDA color palette is expanded into the addition of complementary Florida-inspired textural imagery.",
-    es: 'Para complementar la fotografía de marca en la campaña "Vive Más Floridías", la paleta de colores principales de VISIT FLORIDA se amplía con la incorporación de imágenes con textura inspiradas en Florida.',
-    pt: 'Para complementar a fotografia da marca na campanha "Viva Mais Floridias", a paleta de cores principal do VISIT FLORIDA é expandida com a adição de imagens com texturas complementares inspiradas na Flórida.'
-  },
-  'bg.mtpalette.p2': {
-    en: 'These textures provide visual context by introducing bold, vibrant accent colors that enhance the sense of feeling or place with added detail and depth.',
-    es: 'Estas texturas aportan contexto visual al introducir colores llamativos y vibrantes que intensifican la sensación o el ambiente del lugar con mayor detalle y profundidad.',
-    pt: 'Essas texturas fornecem contexto visual introduzindo cores ousadas e tons vibrantes que aumentam a noção de sensação ou espaço com detalhes e profundidade adicionais.'
-  },
-
-  /* ---------------------------------------------------------------
      MACRO TEXTURES — Section 10: Macro Textures Usage
      --------------------------------------------------------------- */
   'bg.mtusage.title': {
